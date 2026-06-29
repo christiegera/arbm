@@ -214,21 +214,11 @@
           rgba(255,255,255,.015) 41px
         );
     }
-    /* Signature element: giant offset "MIKE" watermark */
-    .hero-watermark {
-      position: absolute;
-      right: -40px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-family: var(--font-display);
-      font-size: clamp(160px, 22vw, 340px);
-      font-weight: 700;
-      color: rgba(255,255,255,.035);
-      line-height: 1;
-      letter-spacing: -.02em;
-      text-transform: uppercase;
-      pointer-events: none;
-      user-select: none;
+    .hero-logo {
+      width: 120px;
+      height: auto;
+      margin-bottom: 28px;
+      display: block;
     }
     .hero-content {
       position: relative;
@@ -458,13 +448,7 @@
        CONTACT + APPOINTMENT
     ===================== */
     #contact { background: var(--smoke); }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      margin-top: 48px;
-    }
-    .contact-card {
+    /* contact card */
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -733,9 +717,9 @@
   <!-- HERO -->
   <section id="home">
     <div class="hero-bg"></div>
-    <div class="hero-watermark">MIKE</div>
     <div class="container">
       <div class="hero-content">
+        <img src="arbm.png" alt="Auto Repair by Mike" class="hero-logo" />
         <div class="hero-eyebrow">Quakertown, PA · Est. 2016</div>
         <h1 class="hero-title">
           Honest Auto<br/>
@@ -920,50 +904,7 @@
         The quickest way to reach us is to submit a work request below — you'll get a response during business hours. Prefer to text? That works great too. We'll get back to you faster than a phone tag ever would.
       </p>
 
-      <div class="contact-grid">
-
-        <!-- Quick contact form via Formspree -->
-        <div class="contact-card">
-          <h3>Send Us a Message</h3>
-          <p class="card-sub">Questions, quick inquiries, or general contact. We'll get back to you ASAP during business hours.</p>
-          <form
-            class="contact-form"
-            action="https://formspree.io/f/YOUR_FORMSPREE_ID"
-            method="POST"
-          >
-            <div class="form-row">
-              <div class="form-field">
-                <label for="fname">First Name</label>
-                <input type="text" id="fname" name="first_name" required placeholder="Jane" />
-              </div>
-              <div class="form-field">
-                <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="last_name" required placeholder="Smith" />
-              </div>
-            </div>
-            <div class="form-field">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required placeholder="jane@example.com" />
-            </div>
-            <div class="form-field">
-              <label for="phone">Phone (optional)</label>
-              <input type="tel" id="phone" name="phone" placeholder="215-555-0100" />
-            </div>
-            <div class="form-field">
-              <label for="vehicle">Vehicle (Year / Make / Model)</label>
-              <input type="text" id="vehicle" name="vehicle" placeholder="e.g. 2018 Honda Accord" />
-            </div>
-            <div class="form-field">
-              <label for="message">What's going on?</label>
-              <textarea id="message" name="message" required placeholder="Describe the issue or what service you need..."></textarea>
-            </div>
-            <p class="form-note">We'll respond during business hours: Mon–Fri, 8am–4:30pm.</p>
-            <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Send Message</button>
-          </form>
-        </div>
-
-        <!-- Shop Monkey Work Request Form -->
-        <div class="appt-card">
+      <div class="appt-card" style="margin-top:48px;">
           <div class="appt-header">
             <h3>Request an Appointment</h3>
             <p>Submit your vehicle info and we'll confirm your appointment. Fastest way to get on the schedule.</p>
@@ -987,8 +928,6 @@
             </script>
           </div>
         </div>
-
-      </div>
 
       <!-- Contact info strip -->
       <div class="contact-info-strip">
