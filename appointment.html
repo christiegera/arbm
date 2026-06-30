@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book your appointment with Auto Repair by Mike in Quakertown, PA. Quick online scheduling — no phone call needed." />
+  <title>Book an Appointment — Auto Repair by Mike</title>
+
+  <style>
+    :root {
+      --red:       #FF5213;
+      --red-dark:  #CC3A00;
+      --black:     #111111;
+      --charcoal:  #2A2A2A;
+      --steel:     #4A5568;
+      --smoke:     #F7F7F5;
+      --white:     #FFFFFF;
+      --border:    #E2E2E0;
+
+      --font-display: 'Oswald', Arial Narrow, sans-serif;
+      --font-body:    'DM Sans', system-ui, sans-serif;
+
+      --max: 880px;
+      --radius: 4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      color: var(--charcoal);
+      background: var(--smoke);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap');
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+    /* =====================
+       NAV (simplified, matches main site)
+    ===================== */
+    nav {
+      background: var(--black);
+      border-bottom: 3px solid var(--red);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .nav-logo {
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: .02em;
+    }
+    .nav-logo span { color: var(--red); }
+    .nav-back {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,.65);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .15s;
+    }
+    .nav-back:hover { color: var(--white); }
+
+    /* =====================
+       PAGE HEADER
+    ===================== */
+    .page-header {
+      padding: 56px 0 32px;
+      text-align: center;
+    }
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 14px;
+    }
+    .page-title {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 5vw, 44px);
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .page-sub {
+      font-size: 16px;
+      color: var(--steel);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .page-sub a { color: var(--red); font-weight: 600; }
+
+    /* =====================
+       REMINDER BANNER
+    ===================== */
+    .reminder-banner {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: #FFF4ED;
+      border: 1px solid #FFD6B8;
+      border-left: 4px solid var(--red);
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      margin-bottom: 24px;
+    }
+    .reminder-icon {
+      font-size: 22px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .reminder-banner strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+    .reminder-banner p {
+      font-size: 14px;
+      color: var(--steel);
+      line-height: 1.6;
+    }
+    .reminder-banner p span {
+      font-weight: 700;
+      color: var(--red-dark);
+    }
+
+    /* =====================
+       FORM WRAPPER
+       — no card chrome, no border, just blends into the smoke bg
+       — the iframe's own white background reads as a natural
+         continuation of the page rather than a boxed widget
+    ===================== */
+    .form-wrap {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 0 0 64px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    }
+    .form-wrap iframe {
+      width: 100%;
+      border: none;
+      display: block;
+      min-height: 1400px; /* generous, no inner scrollbar */
+    }
+
+    /* =====================
+       TRUST STRIP
+    ===================== */
+    .trust-strip {
+      display: flex;
+      justify-content: center;
+      gap: 36px;
+      flex-wrap: wrap;
+      padding-bottom: 56px;
+      font-size: 13px;
+      color: var(--steel);
+    }
+    .trust-strip span { font-weight: 600; color: var(--charcoal); }
+
+    @media (max-width: 600px) {
+      .nav-logo { font-size: 14px; }
+      .page-header { padding: 40px 0 24px; }
+      .form-wrap { border-radius: 0; margin-left: -24px; margin-right: -24px; }
+      .trust-strip { gap: 20px; font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Auto Repair by <span>Mike</span></a>
+      <a href="index.html" class="nav-back">← Back to site</a>
+    </div>
+  </nav>
+
+  <div class="page-header container">
+    <div class="eyebrow">Quakertown, PA</div>
+    <h1 class="page-title">Book Your Appointment</h1>
+    <p class="page-sub">
+      Fill out your info below and we'll confirm your appointment during business hours (Mon–Fri, 8am–4:30pm). Prefer to text instead? <a href="sms:2155387259">Text Mike directly →</a>
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="reminder-banner">
+      <div class="reminder-icon">📋</div>
+      <div>
+        <strong>Booking an inspection?</strong>
+        <p>Bring (or attach below) your <span>vehicle registration</span> and <span>proof of insurance</span> — we can't complete an inspection without them, and it's the #1 reason appointments get delayed.</p>
+      </div>
+    </div>
+
+    <div class="form-wrap">
+      <iframe
+        src="https://app.shopmonkey.cloud/public/quote-request/8b3a712c-4d2a-45fe-9522-8ef144f88aa7"
+        title="Request an Appointment"
+        id="sm-form"
+      ></iframe>
+    </div>
+
+    <div class="trust-strip">
+      <div><span>215-538-7259</span> · Text or call</div>
+      <div><span>13 N Hellertown Ave</span> · Quakertown, PA</div>
+      <div><span>Mon–Fri</span> · 8am–4:30pm</div>
+    </div>
+  </div>
+
+  <script>
+    // Listen for Shop Monkey postMessage events and auto-resize the iframe
+    // to its actual content height, eliminating the inner scrollbar.
+    window.addEventListener('message', function(e) {
+      if (e.origin !== 'https://app.shopmonkey.cloud') return;
+      if (e.data && e.data.source === 'sm_wrf' && e.data.dataLayer) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push(e.data.dataLayer);
+      }
+      // If Shop Monkey ever sends a height value, use it
+      if (e.data && typeof e.data.height === 'number') {
+        document.getElementById('sm-form').style.minHeight = e.data.height + 'px';
+      }
+    });
+  </script>
+
+</body>
+</html>
