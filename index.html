@@ -699,7 +699,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a href="#contact" class="nav-cta">Book Appointment</a>
+      <a href="appointment.html" class="nav-cta">Book Appointment</a>
       <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
         <span></span><span></span><span></span>
       </button>
@@ -711,7 +711,7 @@
     <a href="#services" onclick="toggleMenu()">Services</a>
     <a href="#about" onclick="toggleMenu()">About</a>
     <a href="#contact" onclick="toggleMenu()">Contact</a>
-    <a href="#contact" onclick="toggleMenu()">Book Appointment →</a>
+    <a href="appointment.html" onclick="toggleMenu()">Book Appointment →</a>
   </div>
 
   <!-- HERO -->
@@ -730,7 +730,7 @@
           Complete auto repair service for all makes and models — provided with honesty, value, and integrity. Born and raised in Quakertown, serving our community since 2016.
         </p>
         <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">Book an Appointment</a>
+          <a href="appointment.html" class="btn btn-primary">Book an Appointment</a>
           <a href="sms:2155387259" class="btn btn-outline">Text Mike — he'll get back to you</a>
         </div>
         <div class="hero-stats">
@@ -850,6 +850,11 @@
         </div>
       </div>
 
+      <div class="csp-note" style="border-left-color:var(--red); margin-bottom:16px;">
+        <strong>📋 Getting a PA Inspection?</strong>
+        <p>Don't forget your <strong>vehicle registration</strong> and <strong>proof of insurance</strong> — by law we can't complete your inspection without them. Bring them with you, or attach photos when you <a href="appointment.html">book your appointment</a>.</p>
+      </div>
+
       <div class="csp-note">
         <strong>Note on Customer-Supplied Parts</strong>
         <p>We do install customer-supplied parts under certain conditions. Please <a href="#contact">contact us first</a> to discuss your situation before purchasing parts. Labor warranty applies to our work only; we cannot warranty parts we did not supply.</p>
@@ -889,7 +894,7 @@
             <span class="about-badge">Confidence Plus</span>
           </div>
           <br/>
-          <a href="#contact" class="btn btn-dark">Schedule an Appointment</a>
+          <a href="appointment.html" class="btn btn-dark">Schedule an Appointment</a>
         </div>
       </div>
     </div>
@@ -901,33 +906,43 @@
       <div class="section-label">Get In Touch</div>
       <h2 class="section-title">Let's Get Your<br/>Car Back on the Road</h2>
       <p class="section-sub">
-        The quickest way to reach us is to submit a work request below — you'll get a response during business hours. Prefer to text? That works great too. We'll get back to you faster than a phone tag ever would.
+        Have a question or want to send us a quick message? Use the form below. Ready to get on the schedule? <a href="appointment.html" style="color:var(--red); font-weight:600;">Book an appointment →</a>
       </p>
 
-      <div class="appt-card" style="margin-top:48px;">
-          <div class="appt-header">
-            <h3>Request an Appointment</h3>
-            <p>Submit your vehicle info and we'll confirm your appointment. Fastest way to get on the schedule.</p>
+      <div class="contact-card" style="margin-top:48px; max-width:640px;">
+        <h3>Send Us a Message</h3>
+        <p class="card-sub">Questions, quick inquiries, or general contact. We'll get back to you ASAP during business hours.</p>
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+          method="POST"
+        >
+          <div class="form-row">
+            <div class="form-field">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="first_name" required placeholder="Jane" />
+            </div>
+            <div class="form-field">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="last_name" required placeholder="Smith" />
+            </div>
           </div>
-          <div class="appt-iframe-wrap">
-            <iframe
-              src="https://app.shopmonkey.cloud/public/quote-request/8b3a712c-4d2a-45fe-9522-8ef144f88aa7"
-              width="100%"
-              height="700"
-              frameborder="0"
-              title="Request an Appointment"
-            ></iframe>
-            <script>
-              window.addEventListener('message', function(e) {
-                if (e.origin !== 'https://app.shopmonkey.cloud') return;
-                if (e.data && e.data.source === 'sm_wrf' && e.data.dataLayer) {
-                  window.dataLayer = window.dataLayer || [];
-                  window.dataLayer.push(e.data.dataLayer);
-                }
-              });
-            </script>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="jane@example.com" />
           </div>
-        </div>
+          <div class="form-field">
+            <label for="phone">Phone (optional)</label>
+            <input type="tel" id="phone" name="phone" placeholder="215-555-0100" />
+          </div>
+          <div class="form-field">
+            <label for="message">What's going on?</label>
+            <textarea id="message" name="message" required placeholder="Ask us anything..."></textarea>
+          </div>
+          <p class="form-note">We'll respond during business hours: Mon–Fri, 8am–4:30pm.</p>
+          <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Send Message</button>
+        </form>
+      </div>
 
       <!-- Contact info strip -->
       <div class="contact-info-strip">
