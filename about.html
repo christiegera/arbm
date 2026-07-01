@@ -4,8 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="About Mike Agostino — USAF veteran, dealer-trained mechanic, and lifelong Quakertown resident. Auto Repair by Mike, LLC." />
+  <link rel="icon" type="image/png" href="arbm.png">
+  <link rel="apple-touch-icon" href="arbm.png">
   <title>About Mike — Auto Repair by Mike</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --red:      #FF5213;
@@ -16,12 +21,11 @@
       --smoke:    #F7F7F5;
       --white:    #FFFFFF;
       --border:   #E2E2E0;
-      --font-display: 'Patrick Hand', cursive;
-      --font-body:    'Open Sans', system-ui, sans-serif;
+      --font-display: 'Oswald', Arial Narrow, sans-serif;
+      --font-body:    'DM Sans', system-ui, sans-serif;
       --max: 900px;
       --radius: 6px;
     }
-    @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Open+Sans:wght@400;500;600;700&display=swap');
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { font-family: var(--font-body); font-size: 16px; color: var(--charcoal); background: var(--smoke); line-height: 1.6; }
@@ -45,7 +49,7 @@
     .page-hero { background: var(--black); padding: 72px 0 64px; }
     .page-hero-inner { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
     .page-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
-    .page-title { font-family: var(--font-display); font-size: clamp(36px, 5.5vw, 58px); font-weight: 400; color: var(--white); line-height: 1.1; margin-bottom: 16px; }
+    .page-title { font-family: var(--font-display); font-size: clamp(36px, 5.5vw, 58px); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 16px; }
     .page-tagline { font-size: 14px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-top: 12px; }
 
     /* CONTENT */
@@ -56,7 +60,7 @@
     .about-photo img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
     .photo-placeholder { width: 100%; aspect-ratio: 3/4; background: var(--charcoal); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.2); font-size: 14px; text-align: center; padding: 24px; }
 
-    .about-body h2 { font-family: var(--font-display); font-size: clamp(26px, 4vw, 38px); font-weight: 400; color: var(--black); line-height: 1.2; margin-bottom: 20px; }
+    .about-body h2 { font-family: var(--font-display); font-size: clamp(26px, 4vw, 38px); font-weight: 700; color: var(--black); line-height: 1.2; margin-bottom: 20px; }
     .about-body p { font-size: 16px; color: var(--steel); line-height: 1.8; margin-bottom: 18px; }
     .about-body p strong { color: var(--charcoal); }
 
@@ -71,7 +75,7 @@
     .services-section { background: var(--white); padding: 64px 0; }
     .services-section .container { max-width: var(--max); }
     .services-intro { margin-bottom: 32px; }
-    .services-intro h2 { font-family: var(--font-display); font-size: clamp(22px, 3vw, 30px); font-weight: 400; color: var(--black); margin-bottom: 10px; }
+    .services-intro h2 { font-family: var(--font-display); font-size: clamp(22px, 3vw, 30px); font-weight: 700; color: var(--black); margin-bottom: 10px; }
     .services-intro p { font-size: 15px; color: var(--steel); }
     .services-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 24px; }
     .service-item { font-size: 14px; color: var(--charcoal); padding: 8px 12px; background: var(--smoke); border-radius: var(--radius); }
@@ -91,7 +95,7 @@
 
     /* CTA STRIP */
     .cta-strip { background: var(--red); padding: 52px 0; text-align: center; }
-    .cta-strip h2 { font-family: var(--font-display); font-size: clamp(28px, 4.5vw, 42px); font-weight: 400; color: var(--white); margin-bottom: 12px; }
+    .cta-strip h2 { font-family: var(--font-display); font-size: clamp(28px, 4.5vw, 42px); font-weight: 700; color: var(--white); margin-bottom: 12px; }
     .cta-strip p { font-size: 16px; color: rgba(255,255,255,.8); margin-bottom: 28px; }
     .cta-strip-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
     .btn-white { background: var(--white); color: var(--red); }
