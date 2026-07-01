@@ -109,6 +109,23 @@
     .page-sub a { color: var(--red); font-weight: 600; }
 
     /* =====================
+       INSPECTION ALERT (top of page)
+    ===================== */
+    .inspection-alert {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: var(--black);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+    .inspection-alert-icon { font-size: 24px; flex-shrink: 0; line-height: 1.2; }
+    .inspection-alert strong { display: block; font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 5px; }
+    .inspection-alert p { font-size: 14px; color: rgba(255,255,255,.65); line-height: 1.6; }
+    .inspection-alert strong em { color: var(--red); font-style: normal; }
+
+    /* =====================
        REMINDER BANNER
     ===================== */
     .reminder-banner {
@@ -204,6 +221,14 @@
   </div>
 
   <div class="container">
+    <div class="inspection-alert">
+      <div class="inspection-alert-icon">📋</div>
+      <div>
+        <strong>Getting a PA Inspection?</strong>
+        <p>You must bring your <strong>vehicle registration</strong> and <strong>proof of insurance</strong> — by law we can't complete your inspection without them. You can attach photos below when you submit your request.</p>
+      </div>
+    </div>
+
     <div class="reminder-banner">
       <div class="reminder-icon">📋</div>
       <div>
@@ -218,6 +243,14 @@
         title="Request an Appointment"
         id="sm-form"
       ></iframe>
+    </div>
+
+    <div class="policy-note" style="margin-top:24px;">
+      <div style="font-size:20px; flex-shrink:0; line-height:1.3;">🔧</div>
+      <div>
+        <strong style="display:block; font-size:14px; font-weight:700; color:var(--black); margin-bottom:3px;">Customer-Supplied Parts</strong>
+        <p style="font-size:14px; color:var(--steel); line-height:1.6;">We do install parts you bring in under certain conditions — <a href="index.html#contact" style="color:var(--red); font-weight:600;">contact us first</a> before purchasing. Labor warranty applies to our work only; we can't warranty parts we didn't supply.</p>
+      </div>
     </div>
 
     <div class="trust-strip">
