@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="About Mike Agostino — USAF veteran, dealer-trained mechanic, and lifelong Quakertown resident. Auto Repair by Mike, LLC." />
-  <link rel="icon" type="image/png" href="arbm.png">
-  <link rel="apple-touch-icon" href="arbm.png">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
   <title>About Mike — Auto Repair by Mike</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,15 +38,27 @@
     .btn-dark    { background: var(--black); color: var(--white); }
 
     /* NAV */
-    nav { background: var(--black); border-bottom: 3px solid var(--red); }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--black); border-bottom: 3px solid var(--red); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
     .nav-logo { font-family: var(--font-body); font-size: 17px; font-weight: 700; color: var(--white); }
     .nav-logo span { color: var(--red); }
-    .nav-back { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.6); transition: color .15s; }
-    .nav-back:hover { color: var(--white); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.7); transition: color .15s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; background: var(--red); color: var(--white); padding: 9px 18px; border-radius: var(--radius); transition: opacity .15s; }
+    .nav-cta:hover { opacity: .85; }
+    .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-mobile-toggle span { display: block; width: 22px; height: 2px; background: var(--white); margin: 5px 0; transition: .2s; }
+    .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--black); padding: 20px 24px; border-top: 1px solid rgba(255,255,255,.1); z-index: 99; }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; font-family: var(--font-body); font-size: 18px; font-weight: 600; color: var(--white); padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .mobile-menu a:last-child { border-bottom: none; color: var(--red); }
+    .nav-mobile-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+    .nav-mobile-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-mobile-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
 
     /* PAGE */
-    .page-hero { background: var(--black); padding: 72px 0 64px; }
+    .page-hero { background: var(--black); padding: 72px 0 64px; margin-top: 64px; }
     .page-hero-inner { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
     .page-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
     .page-title { font-family: var(--font-display); font-size: clamp(36px, 5.5vw, 58px); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 16px; }
@@ -110,6 +122,10 @@
     .footer-links a { font-size: 13px; color: rgba(255,255,255,.45); transition: color .15s; }
     .footer-links a:hover { color: var(--white); }
 
+    @media (max-width: 600px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-mobile-toggle { display: block; }
+    }
     @media (max-width: 700px) {
       .about-grid { grid-template-columns: 1fr; }
       .about-photo { display: none; }
@@ -124,11 +140,24 @@
 <body>
 
   <nav>
-    <div class="nav-inner">
+    <div class="container nav-inner">
       <a href="index.html" class="nav-logo">Auto Repair by <span>Mike</span></a>
-      <a href="index.html" class="nav-back">← Back to home</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="appointment.html" class="nav-cta">Book Appointment</a>
+      <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="index.html#contact" onclick="toggleMenu()">Contact</a>
+    <a href="appointment.html" onclick="toggleMenu()">Book Appointment →</a>
+  </div>
 
   <!-- PAGE HERO -->
   <div class="page-hero">
@@ -279,5 +308,22 @@
     </div>
   </footer>
 
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const toggle = document.querySelector('.nav-mobile-toggle');
+      menu.classList.toggle('open');
+      toggle.classList.toggle('open');
+    }
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('mobileMenu');
+      const toggle = document.querySelector('.nav-mobile-toggle');
+      if (menu && menu.classList.contains('open') && !menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('open');
+        toggle.classList.remove('open');
+      }
+    });
+  </script>
 </body>
 </html>
