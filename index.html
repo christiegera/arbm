@@ -11,7 +11,6 @@
   <meta property="og:url" content="https://autorepairbymike.com" />
   <title>Auto Repair by Mike — Quakertown, PA</title>
 
-  <!-- Schema.org structured data for local SEO + AIO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -30,658 +29,195 @@
     },
     "openingHours": "Mo-Fr 08:00-16:30",
     "description": "Complete auto repair service provided with honesty, value and integrity. Serving Quakertown, Trumbauersville, Richlandtown, Perkasie, Spinnerstown and Allentown PA.",
-    "founder": {
-      "@type": "Person",
-      "name": "Mike Agostino"
-    },
-    "areaServed": ["Quakertown PA", "Trumbauersville PA", "Richlandtown PA", "Perkasie PA", "Spinnerstown PA", "Allentown PA"],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Auto Repair Services",
-      "itemListElement": [
-        "PA Safety Inspections", "Brake Service", "Oil Changes", "Diagnostics",
-        "Tune-ups", "Tires", "A/C Service", "Exhaust Repair", "Transmission Service"
-      ]
-    }
+    "founder": { "@type": "Person", "name": "Mike Agostino" },
+    "areaServed": ["Quakertown PA","Trumbauersville PA","Richlandtown PA","Perkasie PA","Spinnerstown PA","Allentown PA"]
   }
   </script>
 
   <style>
-    /* =====================
-       TOKENS
-    ===================== */
     :root {
-      --red:       #FF5213;
-      --red-dark:  #CC3A00;
-      --black:     #111111;
-      --charcoal:  #2A2A2A;
-      --steel:     #4A5568;
-      --smoke:     #F7F7F5;
-      --white:     #FFFFFF;
-      --border:    #E2E2E0;
-
+      --red:      #FF5213;
+      --red-dark: #CC3A00;
+      --black:    #111111;
+      --charcoal: #2A2A2A;
+      --steel:    #4A5568;
+      --smoke:    #F7F7F5;
+      --white:    #FFFFFF;
+      --border:   #E2E2E0;
       --font-display: 'Oswald', Arial Narrow, sans-serif;
       --font-body:    'DM Sans', system-ui, sans-serif;
-
       --max:    1140px;
-      --radius: 4px;
+      --radius: 6px;
     }
-
-    /* =====================
-       RESET & BASE
-    ===================== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--font-body);
-      font-size: 16px;
-      color: var(--charcoal);
-      background: var(--white);
-      line-height: 1.6;
-    }
-    img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
 
     @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap');
 
-    /* =====================
-       UTILITY
-    ===================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); font-size: 16px; color: var(--charcoal); background: var(--white); line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
     .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
     .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      font-family: var(--font-body);
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      border-radius: var(--radius);
-      cursor: pointer;
-      transition: opacity .15s, transform .1s;
+      display: inline-block; padding: 14px 28px;
+      font-family: var(--font-body); font-size: 15px; font-weight: 600;
+      letter-spacing: .06em; text-transform: uppercase;
+      border-radius: var(--radius); cursor: pointer;
+      transition: opacity .15s, transform .1s; border: none;
     }
     .btn:hover { opacity: .88; transform: translateY(-1px); }
-    .btn-primary   { background: var(--red); color: var(--white); }
-    .btn-outline   { background: transparent; color: var(--white); border: 2px solid var(--white); }
-    .btn-dark      { background: var(--black); color: var(--white); }
+    .btn-primary { background: var(--red); color: var(--white); }
+    .btn-outline { background: transparent; color: var(--white); border: 2px solid var(--white); }
+    .btn-dark    { background: var(--black); color: var(--white); }
 
     section { padding: 80px 0; }
     .section-label {
-      font-family: var(--font-body);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 12px;
+      font-family: var(--font-body); font-size: 12px; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--red); margin-bottom: 12px;
     }
     .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(26px, 4vw, 38px);
-      font-weight: 700;
-      color: var(--black);
-      line-height: 1.2;
-      margin-bottom: 16px;
+      font-family: var(--font-display); font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700; color: var(--black); line-height: 1.2; margin-bottom: 16px;
     }
-    .section-sub {
-      font-size: 17px;
-      color: var(--steel);
-      max-width: 580px;
-      line-height: 1.7;
-    }
+    .section-sub { font-size: 17px; color: var(--steel); max-width: 580px; line-height: 1.7; }
 
-    /* =====================
-       NAV
-    ===================== */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: var(--black);
-      border-bottom: 3px solid var(--red);
-    }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
-    }
-    .nav-logo {
-      font-family: var(--font-body);
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--white);
-      letter-spacing: .04em;
-      text-transform: uppercase;
-    }
+    /* ── NAV ── */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--black); border-bottom: 3px solid var(--red); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { font-family: var(--font-body); font-size: 17px; font-weight: 700; color: var(--white); }
     .nav-logo span { color: var(--red); }
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      list-style: none;
-    }
-    .nav-links a {
-      font-family: var(--font-body);
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.75);
-      transition: color .15s;
-    }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.7); transition: color .15s; }
     .nav-links a:hover { color: var(--white); }
-    .nav-cta {
-      font-family: var(--font-body);
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      background: var(--red);
-      color: var(--white);
-      padding: 9px 18px;
-      border-radius: var(--radius);
-      transition: opacity .15s;
-    }
+    .nav-cta { font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; background: var(--red); color: var(--white); padding: 9px 18px; border-radius: var(--radius); transition: opacity .15s; }
     .nav-cta:hover { opacity: .85; }
-    .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; }
-    .nav-mobile-toggle span {
-      display: block; width: 22px; height: 2px;
-      background: var(--white); margin: 5px 0;
-      transition: .2s;
-    }
+    .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-mobile-toggle span { display: block; width: 22px; height: 2px; background: var(--white); margin: 5px 0; transition: .2s; }
+    .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--black); padding: 20px 24px; border-top: 1px solid rgba(255,255,255,.1); z-index: 99; }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; font-family: var(--font-body); font-size: 18px; font-weight: 600; color: var(--white); padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .mobile-menu a:last-child { border-bottom: none; color: var(--red); }
 
-    /* =====================
-       HERO
-    ===================== */
-    #home {
-      padding-top: 64px; /* nav height */
-      background: var(--black);
-      min-height: 100svh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute; inset: 0;
-      background:
-        linear-gradient(135deg, rgba(192,39,45,.18) 0%, transparent 60%),
-        repeating-linear-gradient(
-          -45deg,
-          transparent,
-          transparent 40px,
-          rgba(255,255,255,.015) 40px,
-          rgba(255,255,255,.015) 41px
-        );
-    }
-    .hero-logo {
-      width: 120px;
-      height: auto;
-      margin-bottom: 28px;
-      display: block;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 680px;
-    }
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--font-body);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 20px;
-    }
-    .hero-eyebrow::before {
-      content: '';
-      display: block;
-      width: 32px; height: 2px;
-      background: var(--red);
-    }
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(42px, 7vw, 86px);
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.02;
-      text-transform: uppercase;
-      letter-spacing: -.01em;
-      margin-bottom: 20px;
-    }
-    .hero-title em {
-      font-style: normal;
-      color: var(--red);
-    }
-    .hero-sub {
-      font-size: 18px;
-      color: rgba(255,255,255,.65);
-      max-width: 520px;
-      margin-bottom: 36px;
-      line-height: 1.65;
-    }
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 52px;
-    }
-    .hero-stats {
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-      border-top: 1px solid rgba(255,255,255,.1);
-      padding-top: 32px;
-    }
-    .hero-stat-num {
-      font-family: var(--font-display);
-      font-size: 34px;
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1;
-    }
-    .hero-stat-label {
-      font-size: 12px;
-      color: rgba(255,255,255,.45);
-      letter-spacing: .05em;
-      margin-top: 4px;
-    }
+    /* ── HERO ── */
+    #home { padding-top: 64px; background: var(--black); min-height: 100svh; display: flex; align-items: center; position: relative; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,82,19,.15) 0%, transparent 60%), repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(255,255,255,.012) 40px, rgba(255,255,255,.012) 41px); }
+    .hero-content { position: relative; z-index: 2; max-width: 680px; }
+    .hero-logo { width: 130px; height: auto; margin-bottom: 28px; }
+    .hero-tagline { font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 16px; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--red); margin-bottom: 20px; }
+    .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 2px; background: var(--red); }
+    .hero-title { font-family: var(--font-display); font-size: clamp(42px, 7vw, 82px); font-weight: 700; color: var(--white); line-height: 1.02; text-transform: uppercase; letter-spacing: -.01em; margin-bottom: 20px; }
+    .hero-title em { font-style: normal; color: var(--red); }
+    .hero-sub { font-size: 18px; color: rgba(255,255,255,.62); max-width: 500px; margin-bottom: 36px; line-height: 1.65; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 52px; }
+    .hero-stats { display: flex; gap: 40px; flex-wrap: wrap; border-top: 1px solid rgba(255,255,255,.1); padding-top: 32px; }
+    .hero-stat-num { font-family: var(--font-display); font-size: 34px; font-weight: 700; color: var(--white); line-height: 1; }
+    .hero-stat-label { font-size: 12px; color: rgba(255,255,255,.4); letter-spacing: .04em; margin-top: 4px; }
 
-    /* =====================
-       SERVICES
-    ===================== */
-    #services { background: var(--smoke); }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 12px;
-      margin-top: 48px;
-    }
-    .service-item {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--red);
-      padding: 14px 16px;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--charcoal);
-      border-radius: 0 var(--radius) var(--radius) 0;
-      transition: border-left-color .15s, box-shadow .15s;
-    }
-    .service-item:hover {
-      border-left-color: var(--red-dark);
-      box-shadow: 0 2px 12px rgba(0,0,0,.07);
-    }
-    .makes-section {
-      margin-top: 56px;
-      padding-top: 40px;
-      border-top: 1px solid var(--border);
-    }
-    .makes-label {
-      font-family: var(--font-body);
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: var(--steel);
-      margin-bottom: 20px;
-    }
-    .makes-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .make-badge {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--steel);
-      background: var(--white);
-      border: 1px solid var(--border);
-      padding: 5px 12px;
-      border-radius: 20px;
-    }
+    /* ── HOURS BAR ── */
+    .hours-bar { background: var(--red); padding: 22px 0; }
+    .hours-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .hours-text { font-family: var(--font-body); font-size: 18px; font-weight: 700; color: var(--white); }
+    .hours-detail { font-size: 14px; color: rgba(255,255,255,.8); margin-top: 3px; }
+    .hours-phone { font-family: var(--font-body); font-size: 22px; font-weight: 700; color: var(--white); }
 
-    /* =====================
-       ABOUT
-    ===================== */
-    #about { background: var(--white); }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-    .about-img-wrap {
-      position: relative;
-    }
-    .about-img-placeholder {
-      width: 100%;
-      aspect-ratio: 4/5;
-      background: var(--charcoal);
-      border-radius: var(--radius);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-    .about-img-placeholder img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .about-accent {
-      position: absolute;
-      bottom: -16px;
-      right: -16px;
-      width: 120px;
-      height: 120px;
-      background: var(--red);
-      border-radius: var(--radius);
-      z-index: -1;
-    }
-    .about-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 28px;
-    }
-    .about-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--charcoal);
-      background: var(--smoke);
-      border: 1px solid var(--border);
-      padding: 7px 14px;
-      border-radius: 20px;
-    }
-    .about-badge::before {
-      content: '✓';
-      color: var(--red);
-      font-weight: 700;
-    }
-    .about-body p { margin-bottom: 16px; color: var(--steel); line-height: 1.75; }
-    .about-body p:last-of-type { margin-bottom: 28px; }
+    /* ── REVIEWS ── */
+    #reviews { background: var(--smoke); }
+    .reviews-header { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 40px; }
+    .reviews-stars { display: flex; align-items: center; gap: 6px; margin-top: 8px; }
+    .star { color: #F5A623; font-size: 20px; }
+    .reviews-summary { font-size: 14px; color: var(--steel); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .review-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; }
+    .review-stars { display: flex; gap: 3px; margin-bottom: 14px; }
+    .review-stars span { color: #F5A623; font-size: 15px; }
+    .review-text { font-size: 15px; color: var(--charcoal); line-height: 1.65; font-style: italic; flex: 1; margin-bottom: 16px; }
+    .review-author { font-size: 13px; font-weight: 700; color: var(--black); }
+    .review-source { font-size: 12px; color: var(--steel); margin-top: 2px; }
+    .reviews-cta { margin-top: 28px; text-align: center; font-size: 14px; font-weight: 600; }
+    .reviews-cta a { color: var(--red); }
+    .reviews-cta a:hover { text-decoration: underline; }
 
-    /* =====================
-       HOURS BAR
-    ===================== */
-    .hours-bar {
-      background: var(--red);
-      padding: 24px 0;
-    }
-    .hours-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-    .hours-text {
-      font-family: var(--font-body);
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--white);
-      text-transform: uppercase;
-      letter-spacing: .04em;
-    }
-    .hours-detail {
-      font-size: 15px;
-      color: rgba(255,255,255,.8);
-      margin-top: 4px;
-    }
-    .hours-phone {
-      font-family: var(--font-body);
-      font-size: 26px;
-      font-weight: 700;
-      color: var(--white);
-      letter-spacing: .02em;
-    }
+    /* ── MAP ── */
+    #map { padding: 0; }
+    .map-wrap { display: grid; grid-template-columns: 1fr 2fr; }
+    .map-info { background: var(--black); padding: 52px 44px; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+    .map-info-label { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 5px; }
+    .map-info-value { font-size: 16px; font-weight: 600; color: var(--white); line-height: 1.4; }
+    .map-info-value a { color: var(--white); transition: color .15s; }
+    .map-info-value a:hover { color: var(--red); }
+    .map-iframe { width: 100%; height: 400px; border: none; display: block; filter: grayscale(10%); }
 
-    /* =====================
-       CONTACT + APPOINTMENT
-    ===================== */
+    /* ── CONTACT ── */
     #contact { background: var(--smoke); }
-    /* contact card */
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 32px;
-    }
-    .contact-card h3 {
-      font-family: var(--font-body);
-      font-size: 20px;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--black);
-      margin-bottom: 6px;
-    }
-    .contact-card .card-sub {
-      font-size: 14px;
-      color: var(--steel);
-      margin-bottom: 24px;
-    }
-
-    /* Quick contact form (Formspree) */
+    .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; align-items: start; }
+    .contact-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; }
+    .contact-card h3 { font-size: 18px; font-weight: 700; color: var(--black); margin-bottom: 6px; }
+    .contact-card .card-sub { font-size: 14px; color: var(--steel); margin-bottom: 24px; }
     .contact-form { display: flex; flex-direction: column; gap: 14px; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .form-field { display: flex; flex-direction: column; gap: 5px; }
-    .form-field label {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      color: var(--steel);
-    }
-    .form-field input,
-    .form-field select,
-    .form-field textarea {
-      font-family: var(--font-body);
-      font-size: 15px;
-      color: var(--charcoal);
-      background: var(--smoke);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 10px 14px;
-      transition: border-color .15s;
-      outline: none;
-    }
-    .form-field input:focus,
-    .form-field select:focus,
-    .form-field textarea:focus {
-      border-color: var(--red);
-    }
+    .form-field label { font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--steel); }
+    .form-field input, .form-field textarea { font-family: var(--font-body); font-size: 15px; color: var(--charcoal); background: var(--smoke); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 14px; transition: border-color .15s; outline: none; }
+    .form-field input:focus, .form-field textarea:focus { border-color: var(--red); }
     .form-field textarea { resize: vertical; min-height: 90px; }
-    .form-note {
-      font-size: 12px;
-      color: var(--steel);
-    }
+    .form-note { font-size: 12px; color: var(--steel); }
+    .contact-info-stack { display: flex; flex-direction: column; gap: 14px; }
+    .contact-info-item { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; }
+    .contact-info-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--steel); margin-bottom: 5px; }
+    .contact-info-value { font-size: 18px; font-weight: 700; color: var(--black); }
+    .contact-info-value a { transition: color .15s; }
+    .contact-info-value a:hover { color: var(--red); }
+    .contact-info-detail { font-size: 13px; color: var(--steel); margin-top: 2px; }
+    .contact-book-cta { background: var(--red); border-radius: var(--radius); padding: 24px; text-align: center; }
+    .contact-book-cta p { font-size: 14px; color: rgba(255,255,255,.85); margin-bottom: 14px; line-height: 1.6; }
+    .areas-served { margin-top: 40px; text-align: center; font-size: 13px; color: var(--steel); }
 
-    /* Shop Monkey iframe card */
-    .appt-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-    .appt-header {
-      background: var(--black);
-      padding: 24px 32px;
-    }
-    .appt-header h3 {
-      font-family: var(--font-body);
-      font-size: 20px;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--white);
-      margin-bottom: 4px;
-    }
-    .appt-header p { font-size: 14px; color: rgba(255,255,255,.6); }
-    .appt-iframe-wrap { padding: 0; }
-    .appt-iframe-wrap iframe {
-      width: 100%;
-      height: 700px;
-      border: none;
-      display: block;
-    }
+    /* ── STICKY MOBILE CTA ── */
+    .sticky-mobile-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; background: var(--black); border-top: 2px solid var(--red); padding: 12px 16px; gap: 10px; }
+    .sticky-mobile-cta a { flex: 1; text-align: center; padding: 12px 8px; font-family: var(--font-body); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; border-radius: var(--radius); }
+    .sticky-cta-book { background: var(--red); color: var(--white); }
+    .sticky-cta-text { background: rgba(255,255,255,.1); color: var(--white); border: 1px solid rgba(255,255,255,.2); }
 
-    /* Contact info strip */
-    .contact-info-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      margin-top: 48px;
-    }
-    .info-cell {
-      background: var(--white);
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .info-cell-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--steel);
-    }
-    .info-cell-value {
-      font-family: var(--font-body);
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--black);
-    }
-    .info-cell-value a { transition: color .15s; }
-    .info-cell-value a:hover { color: var(--red); }
-    .info-cell-detail { font-size: 13px; color: var(--steel); }
-
-    /* =====================
-       FOOTER
-    ===================== */
-    footer {
-      background: var(--black);
-      padding: 40px 0;
-      border-top: 3px solid var(--red);
-    }
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .footer-logo {
-      font-family: var(--font-body);
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--white);
-      text-transform: uppercase;
-      letter-spacing: .04em;
-    }
+    /* ── FOOTER ── */
+    footer { background: var(--black); padding: 40px 0; border-top: 3px solid var(--red); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .footer-logo { font-size: 16px; font-weight: 700; color: var(--white); }
     .footer-logo span { color: var(--red); }
-    .footer-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-    }
-    .footer-links a {
-      font-size: 13px;
-      color: rgba(255,255,255,.45);
-      transition: color .15s;
-    }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,.3); margin-top: 6px; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,.45); transition: color .15s; }
     .footer-links a:hover { color: var(--white); }
-    .footer-copy {
-      font-size: 12px;
-      color: rgba(255,255,255,.3);
-    }
-    .footer-social {
-      display: flex;
-      gap: 16px;
-    }
-    .footer-social a {
-      font-size: 13px;
-      font-weight: 600;
-      color: rgba(255,255,255,.5);
-      transition: color .15s;
-    }
+    .footer-social { display: flex; gap: 16px; }
+    .footer-social a { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.5); transition: color .15s; }
     .footer-social a:hover { color: var(--white); }
 
-    /* =====================
-       CUSTOMER SUPPLIED PARTS NOTE
-    ===================== */
-    .csp-note {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--red);
-      border-radius: 0 var(--radius) var(--radius) 0;
-      padding: 20px 24px;
-      margin-top: 48px;
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .reviews-grid { grid-template-columns: 1fr 1fr; }
+      .map-wrap { grid-template-columns: 1fr; }
+      .map-iframe { height: 300px; }
+      .contact-layout { grid-template-columns: 1fr; }
     }
-    .csp-note strong {
-      display: block;
-      font-family: var(--font-body);
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 6px;
-      color: var(--black);
-    }
-    .csp-note p { font-size: 14px; color: var(--steel); line-height: 1.65; }
-    .csp-note a { color: var(--red); font-weight: 600; }
-
-    /* =====================
-       RESPONSIVE
-    ===================== */
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
       .nav-links, .nav-cta { display: none; }
       .nav-mobile-toggle { display: block; }
-      .nav-mobile-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
-      .nav-mobile-toggle.open span:nth-child(2) { opacity: 0; }
-      .nav-mobile-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
-      .mobile-menu {
-        display: none;
-        position: fixed;
-        top: 64px; left: 0; right: 0;
-        background: var(--black);
-        padding: 20px 24px;
-        border-top: 1px solid rgba(255,255,255,.1);
-        z-index: 99;
-      }
-      .mobile-menu.open { display: block; }
-      .mobile-menu a {
-        display: block;
-        font-family: var(--font-body);
-        font-size: 18px;
-        font-weight: 600;
-        color: var(--white);
-        padding: 12px 0;
-        border-bottom: 1px solid rgba(255,255,255,.08);
-        letter-spacing: .06em;
-      }
-      .mobile-menu a:last-child { border-bottom: none; color: var(--red); }
-
-      .about-grid { grid-template-columns: 1fr; }
-      .about-img-wrap { display: none; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .contact-info-strip { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
       .hero-actions { flex-direction: column; }
       .hero-actions .btn { text-align: center; }
       .hours-inner { flex-direction: column; text-align: center; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
-      .hero-watermark { font-size: 120px; opacity: .6; }
+      .form-row { grid-template-columns: 1fr; }
+      .reviews-header { flex-direction: column; align-items: flex-start; }
+      .sticky-mobile-cta { display: flex; }
+      body { padding-bottom: 72px; }
     }
-
+    .nav-mobile-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+    .nav-mobile-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-mobile-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { transition: none !important; }
       html { scroll-behavior: auto; }
@@ -695,8 +231,7 @@
     <div class="container nav-inner">
       <a href="#home" class="nav-logo">Auto Repair by <span>Mike</span></a>
       <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <a href="appointment.html" class="nav-cta">Book Appointment</a>
@@ -706,10 +241,8 @@
     </div>
   </nav>
 
-  <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#services" onclick="toggleMenu()">Services</a>
-    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="about.html" onclick="toggleMenu()">About Mike</a>
     <a href="#contact" onclick="toggleMenu()">Contact</a>
     <a href="appointment.html" onclick="toggleMenu()">Book Appointment →</a>
   </div>
@@ -720,6 +253,7 @@
     <div class="container">
       <div class="hero-content">
         <img src="arbm.png" alt="Auto Repair by Mike" class="hero-logo" />
+        <div class="hero-tagline">Honesty · Value · Integrity</div>
         <div class="hero-eyebrow">Quakertown, PA · Est. 2016</div>
         <h1 class="hero-title">
           Honest Auto<br/>
@@ -727,7 +261,7 @@
           <em>Right.</em>
         </h1>
         <p class="hero-sub">
-          Complete auto repair service for all makes and models — provided with honesty, value, and integrity. Born and raised in Quakertown, serving our community since 2016.
+          Complete auto repair for all makes and models. Born and raised in Quakertown — this is our community too.
         </p>
         <div class="hero-actions">
           <a href="appointment.html" class="btn btn-primary">Book an Appointment</a>
@@ -739,12 +273,12 @@
             <div class="hero-stat-label">Years as a mechanic</div>
           </div>
           <div>
-            <div class="hero-stat-num">All</div>
-            <div class="hero-stat-label">Makes &amp; models</div>
+            <div class="hero-stat-num">8 yrs</div>
+            <div class="hero-stat-label">USAF service</div>
           </div>
           <div>
-            <div class="hero-stat-num">PA</div>
-            <div class="hero-stat-label">Safety inspections</div>
+            <div class="hero-stat-num">All</div>
+            <div class="hero-stat-label">Makes &amp; models</div>
           </div>
           <div>
             <div class="hero-stat-num">Mon–Fri</div>
@@ -759,214 +293,156 @@
   <div class="hours-bar">
     <div class="container hours-inner">
       <div>
-        <div class="hours-text">Open Monday – Friday</div>
-        <div class="hours-detail">8:00 AM – 4:30 PM &nbsp;·&nbsp; 13 N Hellertown Ave, Quakertown PA 18951</div>
+        <div class="hours-text">Open Monday – Friday, 8:00 AM – 4:30 PM</div>
+        <div class="hours-detail">13 N Hellertown Ave, Quakertown PA 18951</div>
       </div>
       <a href="sms:2155387259" class="hours-phone">Text Mike → 215-538-7259</a>
     </div>
   </div>
 
-  <!-- SERVICES -->
-  <section id="services">
+  <!-- REVIEWS -->
+  <section id="reviews">
     <div class="container">
-      <div class="section-label">What We Do</div>
-      <h2 class="section-title">Full-Service Auto Repair</h2>
-      <p class="section-sub">
-        From oil changes to full diagnostics, we handle it all. PA Safety Inspections, brake service, A/C, tires, transmission, exhaust — if your car needs it, we do it. Don't see your service listed? Send us a message below — we probably do it.
-      </p>
-
-      <div class="services-grid">
-        <div class="service-item">A/C Service</div>
-        <div class="service-item">Air Filter Replacement</div>
-        <div class="service-item">Alternators</div>
-        <div class="service-item">Batteries</div>
-        <div class="service-item">Brake Service</div>
-        <div class="service-item">Clutch Repair &amp; Replacement</div>
-        <div class="service-item">Computer Diagnostics</div>
-        <div class="service-item">CV Joints</div>
-        <div class="service-item">Differentials &amp; Axles</div>
-        <div class="service-item">Drive Axles</div>
-        <div class="service-item">Emission System Repairs</div>
-        <div class="service-item">Estimates &amp; Appraisals</div>
-        <div class="service-item">Exhaust / Muffler Service</div>
-        <div class="service-item">Fabrication</div>
-        <div class="service-item">Front Wheel Drive</div>
-        <div class="service-item">Fuel Injection Cleaning</div>
-        <div class="service-item">Heating Systems</div>
-        <div class="service-item">Oil Changes</div>
-        <div class="service-item">Overdrive Transmission</div>
-        <div class="service-item">PA Safety Inspections</div>
-        <div class="service-item">Preventative Maintenance</div>
-        <div class="service-item">Radiator Repair &amp; Flush</div>
-        <div class="service-item">Reconditioning</div>
-        <div class="service-item">Scheduled Maintenance</div>
-        <div class="service-item">Starters</div>
-        <div class="service-item">Suspension</div>
-        <div class="service-item">Timing Belt Replacement</div>
-        <div class="service-item">Tires</div>
-        <div class="service-item">Transfer Cases</div>
-        <div class="service-item">Transmission Flush</div>
-        <div class="service-item">Troubleshoot Check Engine Lights</div>
-        <div class="service-item">Tune-ups</div>
-        <div class="service-item">U-joints</div>
-        <div class="service-item">Water Pumps</div>
-        <div class="service-item">Wheel Alignment</div>
-        <div class="service-item">Wheel Balance</div>
+      <div class="reviews-header">
+        <div>
+          <div class="section-label">What Customers Say</div>
+          <h2 class="section-title">Real Reviews from Real Neighbors</h2>
+          <div class="reviews-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            <span class="reviews-summary">5.0 on Google</span>
+          </div>
+        </div>
+        <a href="https://search.google.com/local/writereview?placeid=ChIJHSGgKdkYxIkRHj8EHv0rfOQ" target="_blank" rel="noopener" class="btn btn-dark">Leave a Review ★</a>
       </div>
 
-      <div class="makes-section">
-        <div class="makes-label">Makes We Service</div>
-        <div class="makes-list">
-          <span class="make-badge">Acura</span>
-          <span class="make-badge">BMW</span>
-          <span class="make-badge">Buick</span>
-          <span class="make-badge">Cadillac</span>
-          <span class="make-badge">Chevrolet</span>
-          <span class="make-badge">Chrysler</span>
-          <span class="make-badge">Dodge</span>
-          <span class="make-badge">Ford</span>
-          <span class="make-badge">GMC</span>
-          <span class="make-badge">Honda</span>
-          <span class="make-badge">Hyundai</span>
-          <span class="make-badge">Infiniti</span>
-          <span class="make-badge">Jeep</span>
-          <span class="make-badge">Kia</span>
-          <span class="make-badge">Land Rover</span>
-          <span class="make-badge">Lexus</span>
-          <span class="make-badge">Lincoln</span>
-          <span class="make-badge">Mazda</span>
-          <span class="make-badge">Mercedes</span>
-          <span class="make-badge">MINI</span>
-          <span class="make-badge">Mitsubishi</span>
-          <span class="make-badge">Nissan</span>
-          <span class="make-badge">Pontiac</span>
-          <span class="make-badge">Saab</span>
-          <span class="make-badge">Saturn</span>
-          <span class="make-badge">Subaru</span>
-          <span class="make-badge">Suzuki</span>
-          <span class="make-badge">Toyota</span>
-          <span class="make-badge">Volkswagen</span>
-          <span class="make-badge">Volvo</span>
+      <div class="reviews-grid">
+        <!-- Replace these with real quotes from his Google listing -->
+        <div class="review-card">
+          <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="review-text">"Mike is honest, thorough, and doesn't try to upsell you on things you don't need. Finally a mechanic I can actually trust."</p>
+          <div class="review-author">— [Customer Name]</div>
+          <div class="review-source">Google Review</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="review-text">"Brought my car in for an inspection and was in and out quickly. Mike explained everything clearly and the price was fair. Will definitely be back."</p>
+          <div class="review-author">— [Customer Name]</div>
+          <div class="review-source">Google Review</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="review-text">"Best mechanic in Quakertown, hands down. He's a local guy who genuinely cares about doing right by his customers. Highly recommend."</p>
+          <div class="review-author">— [Customer Name]</div>
+          <div class="review-source">Google Review</div>
         </div>
       </div>
 
-      <div class="csp-note" style="border-left-color:var(--red); margin-bottom:16px;">
-        <strong>📋 Getting a PA Inspection?</strong>
-        <p>Don't forget your <strong>vehicle registration</strong> and <strong>proof of insurance</strong> — by law we can't complete your inspection without them. Bring them with you, or attach photos when you <a href="appointment.html">book your appointment</a>.</p>
-      </div>
-
-      <div class="csp-note">
-        <strong>Note on Customer-Supplied Parts</strong>
-        <p>We do install customer-supplied parts under certain conditions. Please <a href="#contact">contact us first</a> to discuss your situation before purchasing parts. Labor warranty applies to our work only; we cannot warranty parts we did not supply.</p>
+      <div class="reviews-cta">
+        <a href="https://search.google.com/local/writereview?placeid=ChIJHSGgKdkYxIkRHj8EHv0rfOQ" target="_blank" rel="noopener">Had a great experience? Leave us a Google review →</a>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-img-wrap">
-          <div class="about-img-placeholder">
-            <!-- Replace src with actual photo of Mike/shop -->
-            <img src="https://autorepairbymike.com/wp-content/uploads/2018/05/ezgif.com-webp-to-jpg-1.jpg" alt="Auto Repair by Mike shop" />
-          </div>
-          <div class="about-accent"></div>
+  <!-- MAP -->
+  <section id="map">
+    <div class="map-wrap">
+      <div class="map-info">
+        <div>
+          <div class="map-info-label">Address</div>
+          <div class="map-info-value">13 N Hellertown Ave<br/>Quakertown, PA 18951</div>
         </div>
-        <div class="about-body">
-          <div class="section-label">About Mike</div>
-          <h2 class="section-title">Built on Trust,<br/>Backed by Experience</h2>
-          <p>
-            Born and raised in Quakertown, I'm proud to provide quality auto repair services to my community. My family and I work and live here — this isn't just a business, it's personal.
-          </p>
-          <p>
-            I've spent 10+ years as a mechanic across dealerships including BMW, Honda, KIA, and Toyota, as well as independent shops. Before that, I served <strong>8 years in the United States Air Force as an Aerospace Maintenance Journeyman</strong> — which means attention to detail and doing the job right the first time are non-negotiable.
-          </p>
-          <p>
-            We've continuously invested in the most up-to-date computerized diagnostic equipment so we can handle modern vehicles as well as classics.
-          </p>
-          <div class="about-badges">
-            <span class="about-badge">10+ Years Experience</span>
-            <span class="about-badge">USAF Aerospace Maintenance</span>
-            <span class="about-badge">Dealership Trained</span>
-            <span class="about-badge">PA Safety Inspections</span>
-            <span class="about-badge">Advanced Diagnostics</span>
-            <span class="about-badge">Confidence Plus</span>
-          </div>
-          <br/>
-          <a href="appointment.html" class="btn btn-dark">Schedule an Appointment</a>
+        <div>
+          <div class="map-info-label">Hours</div>
+          <div class="map-info-value">Mon – Fri<br/>8:00 AM – 4:30 PM</div>
+        </div>
+        <div>
+          <div class="map-info-label">Text Mike</div>
+          <div class="map-info-value"><a href="sms:2155387259">215-538-7259</a></div>
+        </div>
+        <div>
+          <div class="map-info-label">Book Online</div>
+          <div class="map-info-value"><a href="appointment.html">Schedule an appointment →</a></div>
         </div>
       </div>
+      <iframe
+        class="map-iframe"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3043.5!2d-75.3441!3d40.4415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c418d929a0211d%3A0xe47cab3fd1e043f!2s13%20N%20Hellertown%20Ave%2C%20Quakertown%2C%20PA%2018951!5e0!3m2!1sen!2sus!4v1"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Auto Repair by Mike location"
+      ></iframe>
     </div>
   </section>
 
-  <!-- CONTACT + APPOINTMENT -->
+  <!-- CONTACT -->
   <section id="contact">
     <div class="container">
       <div class="section-label">Get In Touch</div>
-      <h2 class="section-title">Let's Get Your<br/>Car Back on the Road</h2>
+      <h2 class="section-title">Let's Get Your Car<br/>Back on the Road</h2>
       <p class="section-sub">
-        Have a question or want to send us a quick message? Use the form below. Ready to get on the schedule? <a href="appointment.html" style="color:var(--red); font-weight:600;">Book an appointment →</a>
+        Questions or not quite ready to book? Send a message below. Ready to schedule? <a href="appointment.html" style="color:var(--red); font-weight:600;">Book an appointment →</a>
       </p>
 
-      <div class="contact-card" style="margin-top:48px; max-width:640px;">
-        <h3>Send Us a Message</h3>
-        <p class="card-sub">Questions, quick inquiries, or general contact. We'll get back to you ASAP during business hours.</p>
-        <form
-          class="contact-form"
-          action="https://formspree.io/f/YOUR_FORMSPREE_ID"
-          method="POST"
-        >
-          <div class="form-row">
-            <div class="form-field">
-              <label for="fname">First Name</label>
-              <input type="text" id="fname" name="first_name" required placeholder="Jane" />
+      <div class="contact-layout">
+        <div class="contact-card">
+          <h3>Send Us a Message</h3>
+          <p class="card-sub">General questions, quick inquiries — we'll get back to you during business hours.</p>
+          <!-- Swap action URL with Google Form or Formspree ID when ready -->
+          <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="first_name" required placeholder="Jane" />
+              </div>
+              <div class="form-field">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="last_name" required placeholder="Smith" />
+              </div>
             </div>
             <div class="form-field">
-              <label for="lname">Last Name</label>
-              <input type="text" id="lname" name="last_name" required placeholder="Smith" />
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="jane@example.com" />
             </div>
+            <div class="form-field">
+              <label for="phone">Phone (optional)</label>
+              <input type="tel" id="phone" name="phone" placeholder="215-555-0100" />
+            </div>
+            <div class="form-field">
+              <label for="message">What's going on?</label>
+              <textarea id="message" name="message" required placeholder="Ask us anything..."></textarea>
+            </div>
+            <p class="form-note">We respond Mon–Fri, 8am–4:30pm.</p>
+            <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Send Message</button>
+          </form>
+        </div>
+
+        <div class="contact-info-stack">
+          <div class="contact-info-item">
+            <div class="contact-info-label">Text Mike</div>
+            <div class="contact-info-value"><a href="sms:2155387259">215-538-7259</a></div>
+            <div class="contact-info-detail">Texting is fastest · calls also accepted</div>
           </div>
-          <div class="form-field">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required placeholder="jane@example.com" />
+          <div class="contact-info-item">
+            <div class="contact-info-label">Location</div>
+            <div class="contact-info-value">13 N Hellertown Ave</div>
+            <div class="contact-info-detail">Quakertown, PA 18951</div>
           </div>
-          <div class="form-field">
-            <label for="phone">Phone (optional)</label>
-            <input type="tel" id="phone" name="phone" placeholder="215-555-0100" />
+          <div class="contact-info-item">
+            <div class="contact-info-label">Hours</div>
+            <div class="contact-info-value">Mon – Fri</div>
+            <div class="contact-info-detail">8:00 AM – 4:30 PM · Closed weekends</div>
           </div>
-          <div class="form-field">
-            <label for="message">What's going on?</label>
-            <textarea id="message" name="message" required placeholder="Ask us anything..."></textarea>
+          <div class="contact-book-cta">
+            <p>Ready to get on the schedule? The fastest way is the online booking form — attach your docs and we'll take it from there.</p>
+            <a href="appointment.html" class="btn btn-outline" style="width:100%; text-align:center; display:block;">Book an Appointment →</a>
           </div>
-          <p class="form-note">We'll respond during business hours: Mon–Fri, 8am–4:30pm.</p>
-          <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Send Message</button>
-        </form>
+        </div>
       </div>
 
-      <!-- Contact info strip -->
-      <div class="contact-info-strip">
-        <div class="info-cell">
-          <span class="info-cell-label">Text Mike</span>
-          <span class="info-cell-value"><a href="sms:2155387259">215-538-7259</a></span>
-          <span class="info-cell-detail">Texting is fastest · calls also accepted</span>
-        </div>
-        <div class="info-cell">
-          <span class="info-cell-label">Location</span>
-          <span class="info-cell-value" style="font-size:15px;">13 N Hellertown Ave</span>
-          <span class="info-cell-detail">Quakertown, PA 18951</span>
-        </div>
-        <div class="info-cell">
-          <span class="info-cell-label">Hours</span>
-          <span class="info-cell-value" style="font-size:15px;">Mon – Fri</span>
-          <span class="info-cell-detail">8:00 AM – 4:30 PM · Closed weekends</span>
-        </div>
-      </div>
-
-      <!-- Areas served — good for local SEO/AIO -->
-      <p style="margin-top:24px; font-size:13px; color:var(--steel); text-align:center;">
+      <div class="areas-served">
         Proudly serving <strong>Quakertown</strong>, Trumbauersville, Richlandtown, Perkasie, Spinnerstown, and Allentown, PA.
-      </p>
+      </div>
     </div>
   </section>
 
@@ -975,12 +451,12 @@
     <div class="container footer-inner">
       <div>
         <div class="footer-logo">Auto Repair by <span>Mike</span></div>
-        <div class="footer-copy" style="margin-top:6px;">© 2026 Auto Repair by Mike, LLC · Quakertown, PA</div>
+        <div class="footer-copy">© 2026 Auto Repair by Mike, LLC · Quakertown, PA</div>
       </div>
       <ul class="footer-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="appointment.html">Book Appointment</a></li>
       </ul>
       <div class="footer-social">
         <a href="https://www.facebook.com/autorepairbymike/" target="_blank" rel="noopener">Facebook</a>
@@ -989,6 +465,12 @@
     </div>
   </footer>
 
+  <!-- STICKY MOBILE CTA -->
+  <div class="sticky-mobile-cta">
+    <a href="appointment.html" class="sticky-cta-book">Book Appointment</a>
+    <a href="sms:2155387259" class="sticky-cta-text">Text Mike</a>
+  </div>
+
   <script>
     function toggleMenu() {
       const menu = document.getElementById('mobileMenu');
@@ -996,7 +478,6 @@
       menu.classList.toggle('open');
       toggle.classList.toggle('open');
     }
-    // Close mobile menu on outside click
     document.addEventListener('click', function(e) {
       const menu = document.getElementById('mobileMenu');
       const toggle = document.querySelector('.nav-mobile-toggle');
