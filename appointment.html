@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Book your appointment with Auto Repair by Mike in Quakertown, PA. Quick online scheduling — no phone call needed." />
-  <link rel="icon" type="image/png" href="arbm.png">
-  <link rel="apple-touch-icon" href="arbm.png">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
   <title>Book an Appointment — Auto Repair by Mike</title>
 
   <style>
@@ -45,43 +45,31 @@
     /* =====================
        NAV (simplified, matches main site)
     ===================== */
-    nav {
-      background: var(--black);
-      border-bottom: 3px solid var(--red);
-    }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    .nav-logo {
-      font-family: var(--font-body);
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--white);
-      letter-spacing: .02em;
-    }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--black); border-bottom: 3px solid var(--red); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { font-family: var(--font-body); font-size: 17px; font-weight: 700; color: var(--white); }
     .nav-logo span { color: var(--red); }
-    .nav-back {
-      font-size: 13px;
-      font-weight: 600;
-      color: rgba(255,255,255,.65);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: color .15s;
-    }
-    .nav-back:hover { color: var(--white); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.7); transition: color .15s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; background: var(--red); color: var(--white); padding: 9px 18px; border-radius: var(--radius); transition: opacity .15s; }
+    .nav-cta:hover { opacity: .85; }
+    .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-mobile-toggle span { display: block; width: 22px; height: 2px; background: var(--white); margin: 5px 0; transition: .2s; }
+    .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--black); padding: 20px 24px; border-top: 1px solid rgba(255,255,255,.1); z-index: 99; }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; font-family: var(--font-body); font-size: 18px; font-weight: 600; color: var(--white); padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .mobile-menu a:last-child { border-bottom: none; color: var(--red); }
+    .nav-mobile-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+    .nav-mobile-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-mobile-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
 
     /* =====================
        PAGE HEADER
     ===================== */
     .page-header {
       padding: 56px 0 32px;
+      margin-top: 64px;
       text-align: center;
     }
     .eyebrow {
@@ -197,6 +185,8 @@
     .trust-strip span { font-weight: 600; color: var(--charcoal); }
 
     @media (max-width: 600px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-mobile-toggle { display: block; }
       .nav-logo { font-size: 14px; }
       .page-header { padding: 40px 0 24px; }
       .form-wrap { border-radius: 0; margin-left: -24px; margin-right: -24px; }
@@ -210,17 +200,30 @@
 <body>
 
   <nav>
-    <div class="nav-inner">
+    <div class="container nav-inner">
       <a href="index.html" class="nav-logo">Auto Repair by <span>Mike</span></a>
-      <a href="index.html" class="nav-back">← Back to site</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="about.html" onclick="toggleMenu()">About</a>
+    <a href="index.html#contact" onclick="toggleMenu()">Contact</a>
+  </div>
 
   <div class="page-header container">
     <div class="eyebrow">Quakertown, PA</div>
     <h1 class="page-title">Book Your Appointment</h1>
     <p class="page-sub">
-      Fill out your info below and we'll confirm your appointment during business hours (Mon–Fri, 8am–4:30pm). Prefer to text instead? <a href="sms:2155387259">Text Mike directly →</a>
+      Fill out your info below and we'll confirm your appointment during business hours (Mon–Fri, 8am–4:30pm).<br/><br/>Prefer to text instead? <a href="sms:2155387259">Text Mike directly →</a>
     </p>
   </div>
 
@@ -272,5 +275,22 @@
     });
   </script>
 
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const toggle = document.querySelector('.nav-mobile-toggle');
+      menu.classList.toggle('open');
+      toggle.classList.toggle('open');
+    }
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('mobileMenu');
+      const toggle = document.querySelector('.nav-mobile-toggle');
+      if (menu && menu.classList.contains('open') && !menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('open');
+        toggle.classList.remove('open');
+      }
+    });
+  </script>
 </body>
 </html>
