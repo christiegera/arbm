@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Mike Agostino — USAF veteran, dealer-trained mechanic, and lifelong Quakertown resident. Auto Repair by Mike, LLC." />
+  <title>About Mike — Auto Repair by Mike</title>
+
+  <style>
+    :root {
+      --red:      #FF5213;
+      --red-dark: #CC3A00;
+      --black:    #111111;
+      --charcoal: #2A2A2A;
+      --steel:    #4A5568;
+      --smoke:    #F7F7F5;
+      --white:    #FFFFFF;
+      --border:   #E2E2E0;
+      --font-display: 'Patrick Hand', cursive;
+      --font-body:    'Open Sans', system-ui, sans-serif;
+      --max: 900px;
+      --radius: 6px;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Open+Sans:wght@400;500;600;700&display=swap');
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); font-size: 16px; color: var(--charcoal); background: var(--smoke); line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .btn { display: inline-block; padding: 14px 28px; font-family: var(--font-body); font-size: 15px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; border-radius: var(--radius); cursor: pointer; transition: opacity .15s; border: none; }
+    .btn:hover { opacity: .88; }
+    .btn-primary { background: var(--red); color: var(--white); }
+    .btn-dark    { background: var(--black); color: var(--white); }
+
+    /* NAV */
+    nav { background: var(--black); border-bottom: 3px solid var(--red); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .nav-logo { font-family: var(--font-body); font-size: 17px; font-weight: 700; color: var(--white); }
+    .nav-logo span { color: var(--red); }
+    .nav-back { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.6); transition: color .15s; }
+    .nav-back:hover { color: var(--white); }
+
+    /* PAGE */
+    .page-hero { background: var(--black); padding: 72px 0 64px; }
+    .page-hero-inner { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .page-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+    .page-title { font-family: var(--font-display); font-size: clamp(36px, 5.5vw, 58px); font-weight: 400; color: var(--white); line-height: 1.1; margin-bottom: 16px; }
+    .page-tagline { font-size: 14px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-top: 12px; }
+
+    /* CONTENT */
+    .about-content { padding: 64px 0; }
+    .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 56px; align-items: start; }
+
+    .about-photo { border-radius: var(--radius); overflow: hidden; position: relative; }
+    .about-photo img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
+    .photo-placeholder { width: 100%; aspect-ratio: 3/4; background: var(--charcoal); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.2); font-size: 14px; text-align: center; padding: 24px; }
+
+    .about-body h2 { font-family: var(--font-display); font-size: clamp(26px, 4vw, 38px); font-weight: 400; color: var(--black); line-height: 1.2; margin-bottom: 20px; }
+    .about-body p { font-size: 16px; color: var(--steel); line-height: 1.8; margin-bottom: 18px; }
+    .about-body p strong { color: var(--charcoal); }
+
+    /* CREDENTIAL CARDS */
+    .credentials { margin-top: 36px; display: flex; flex-direction: column; gap: 12px; }
+    .cred-card { background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--red); border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 20px; display: flex; gap: 14px; align-items: flex-start; }
+    .cred-icon { font-size: 22px; flex-shrink: 0; line-height: 1.2; }
+    .cred-title { font-size: 14px; font-weight: 700; color: var(--black); margin-bottom: 3px; }
+    .cred-body { font-size: 13px; color: var(--steel); line-height: 1.55; }
+
+    /* SERVICES LIST */
+    .services-section { background: var(--white); padding: 64px 0; }
+    .services-section .container { max-width: var(--max); }
+    .services-intro { margin-bottom: 32px; }
+    .services-intro h2 { font-family: var(--font-display); font-size: clamp(22px, 3vw, 30px); font-weight: 400; color: var(--black); margin-bottom: 10px; }
+    .services-intro p { font-size: 15px; color: var(--steel); }
+    .services-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 24px; }
+    .service-item { font-size: 14px; color: var(--charcoal); padding: 8px 12px; background: var(--smoke); border-radius: var(--radius); }
+    .makes-row { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border); }
+    .makes-label { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--steel); margin-bottom: 14px; }
+    .makes-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .make-badge { font-size: 13px; color: var(--steel); background: var(--smoke); border: 1px solid var(--border); padding: 4px 12px; border-radius: 20px; }
+
+    /* POLICY NOTES */
+    .policy-section { padding: 0 0 64px; }
+    .policy-section .container { max-width: var(--max); }
+    .policy-note { display: flex; gap: 14px; align-items: flex-start; background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--red); border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 20px; margin-bottom: 12px; }
+    .policy-note-icon { font-size: 20px; flex-shrink: 0; line-height: 1.3; }
+    .policy-note strong { display: block; font-size: 14px; font-weight: 700; color: var(--black); margin-bottom: 3px; }
+    .policy-note p { font-size: 14px; color: var(--steel); line-height: 1.6; }
+    .policy-note a { color: var(--red); font-weight: 600; }
+
+    /* CTA STRIP */
+    .cta-strip { background: var(--red); padding: 52px 0; text-align: center; }
+    .cta-strip h2 { font-family: var(--font-display); font-size: clamp(28px, 4.5vw, 42px); font-weight: 400; color: var(--white); margin-bottom: 12px; }
+    .cta-strip p { font-size: 16px; color: rgba(255,255,255,.8); margin-bottom: 28px; }
+    .cta-strip-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-white { background: var(--white); color: var(--red); }
+
+    /* FOOTER */
+    footer { background: var(--black); padding: 40px 0; border-top: 3px solid var(--red); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .footer-logo { font-size: 16px; font-weight: 700; color: var(--white); }
+    .footer-logo span { color: var(--red); }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,.3); margin-top: 6px; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,.45); transition: color .15s; }
+    .footer-links a:hover { color: var(--white); }
+
+    @media (max-width: 700px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo { display: none; }
+      .services-cols { grid-template-columns: repeat(2, 1fr); }
+      .cta-strip-btns { flex-direction: column; align-items: center; }
+    }
+    @media (max-width: 480px) {
+      .services-cols { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Auto Repair by <span>Mike</span></a>
+      <a href="index.html" class="nav-back">← Back to home</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">Quakertown, PA · Est. 2016</div>
+      <h1 class="page-title">Meet Mike</h1>
+      <div class="page-tagline">Honesty · Value · Integrity</div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about-content">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-photo">
+          <!-- Drop a real photo of Mike here -->
+          <div class="photo-placeholder">Add a photo of Mike or the shop here</div>
+        </div>
+        <div class="about-body">
+          <h2>Born and Raised in Quakertown.<br/>This Community is Personal.</h2>
+          <p>I grew up here. My family lives here, shops here, goes to school here. When you bring your car to me, you're not dealing with a chain — you're dealing with a neighbor who has a real stake in making sure you leave happy.</p>
+          <p>Before opening Auto Repair by Mike in 2016, I served <strong>8 years in the United States Air Force as an Aerospace Maintenance Journeyman</strong>. That's where I learned that doing the job right the first time isn't optional — it's the only way to work. That mentality came with me to the shop.</p>
+          <p>After the Air Force, I spent 10+ years working at <strong>BMW, Honda, KIA, and Toyota dealerships</strong>, as well as independent shops. I've seen what customers get charged at big dealerships. I know what things actually cost. And I'm not going to tell you that you need something you don't.</p>
+          <p>I've continuously invested in the latest computerized diagnostic equipment so I can work on modern vehicles just as confidently as anything older. Whether you drive a 2024 BMW or a 1998 Civic, I've got you covered.</p>
+
+          <div class="credentials">
+            <div class="cred-card">
+              <div class="cred-icon">✈️</div>
+              <div>
+                <div class="cred-title">US Air Force Veteran — Aerospace Maintenance Journeyman</div>
+                <div class="cred-body">8 years of service. Trained to maintain complex aircraft systems with zero margin for error. That precision carries over to every car in the shop.</div>
+              </div>
+            </div>
+            <div class="cred-card">
+              <div class="cred-icon">🏢</div>
+              <div>
+                <div class="cred-title">Dealer-Trained at BMW, Honda, KIA &amp; Toyota</div>
+                <div class="cred-body">10+ years across multiple brands — domestic, Asian, and European. I know how these vehicles were built and what they actually need.</div>
+              </div>
+            </div>
+            <div class="cred-card">
+              <div class="cred-icon">📋</div>
+              <div>
+                <div class="cred-title">Certified PA Safety &amp; Emissions Inspector</div>
+                <div class="cred-body">Licensed to perform Pennsylvania state inspections on-site. No need to make a separate trip — we handle it right here.</div>
+              </div>
+            </div>
+            <div class="cred-card">
+              <div class="cred-icon">📊</div>
+              <div>
+                <div class="cred-title">Carfax Connected</div>
+                <div class="cred-body">We pull your vehicle's full service history through Carfax so we always know what's been done — and what hasn't.</div>
+              </div>
+            </div>
+            <div class="cred-card">
+              <div class="cred-icon">⭐</div>
+              <div>
+                <div class="cred-title">Confidence Plus Certified</div>
+                <div class="cred-body">Additional certification recognizing commitment to quality service and customer satisfaction.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section">
+    <div class="container">
+      <div class="services-intro">
+        <h2>What We Work On</h2>
+        <p>If your car needs it, we probably do it. Don't see your service? Text Mike and ask — we'd rather tell you straight than have you go somewhere else unnecessarily.</p>
+      </div>
+      <div class="services-cols">
+        <div class="service-item">A/C Service</div>
+        <div class="service-item">Air Filter Replacement</div>
+        <div class="service-item">Alternators</div>
+        <div class="service-item">Batteries</div>
+        <div class="service-item">Brake Service</div>
+        <div class="service-item">Clutch Repair &amp; Replacement</div>
+        <div class="service-item">Computer Diagnostics</div>
+        <div class="service-item">CV Joints</div>
+        <div class="service-item">Differentials &amp; Axles</div>
+        <div class="service-item">Emission System Repairs</div>
+        <div class="service-item">Exhaust / Muffler Service</div>
+        <div class="service-item">Fuel Injection Cleaning</div>
+        <div class="service-item">Heating Systems</div>
+        <div class="service-item">Oil Changes</div>
+        <div class="service-item">PA Safety Inspections</div>
+        <div class="service-item">Preventative Maintenance</div>
+        <div class="service-item">Radiator Repair &amp; Flush</div>
+        <div class="service-item">Scheduled Maintenance</div>
+        <div class="service-item">Starters</div>
+        <div class="service-item">Suspension</div>
+        <div class="service-item">Timing Belt Replacement</div>
+        <div class="service-item">Tires</div>
+        <div class="service-item">Transmission Service</div>
+        <div class="service-item">Troubleshoot Check Engine Lights</div>
+        <div class="service-item">Tune-ups</div>
+        <div class="service-item">Water Pumps</div>
+        <div class="service-item">Wheel Alignment &amp; Balance</div>
+      </div>
+
+      <div class="makes-row">
+        <div class="makes-label">Makes We Service</div>
+        <div class="makes-list">
+          <span class="make-badge">Acura</span><span class="make-badge">BMW</span>
+          <span class="make-badge">Buick</span><span class="make-badge">Cadillac</span>
+          <span class="make-badge">Chevrolet</span><span class="make-badge">Chrysler</span>
+          <span class="make-badge">Dodge</span><span class="make-badge">Ford</span>
+          <span class="make-badge">GMC</span><span class="make-badge">Honda</span>
+          <span class="make-badge">Hyundai</span><span class="make-badge">Infiniti</span>
+          <span class="make-badge">Jeep</span><span class="make-badge">Kia</span>
+          <span class="make-badge">Land Rover</span><span class="make-badge">Lexus</span>
+          <span class="make-badge">Lincoln</span><span class="make-badge">Mazda</span>
+          <span class="make-badge">Mercedes</span><span class="make-badge">MINI</span>
+          <span class="make-badge">Mitsubishi</span><span class="make-badge">Nissan</span>
+          <span class="make-badge">Subaru</span><span class="make-badge">Toyota</span>
+          <span class="make-badge">Volkswagen</span><span class="make-badge">Volvo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POLICY NOTES -->
+  <!-- CTA STRIP -->
+  <div class="cta-strip">
+    <h2>Ready to Book?</h2>
+    <p>Schedule online in minutes — no phone call required.</p>
+    <div class="cta-strip-btns">
+      <a href="appointment.html" class="btn btn-white">Book an Appointment</a>
+      <a href="sms:2155387259" class="btn" style="background:rgba(255,255,255,.15); color:var(--white); border: 2px solid rgba(255,255,255,.4);">Text Mike → 215-538-7259</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Auto Repair by <span>Mike</span></div>
+        <div class="footer-copy">© 2026 Auto Repair by Mike, LLC · Quakertown, PA</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="appointment.html">Book Appointment</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
