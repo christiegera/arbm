@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Auto Repair by Mike services — PA inspections, brakes, oil changes, diagnostics, tires and more. Serving all makes and models in Quakertown, PA." />
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <title>Services — Auto Repair by Mike</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQBJD4V3GH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QQBJD4V3GH');
+  </script>
+
+  <style>
+    :root {
+      --red:      #FF5213;
+      --red-dark: #CC3A00;
+      --black:    #111111;
+      --charcoal: #2A2A2A;
+      --steel:    #4A5568;
+      --smoke:    #F7F7F5;
+      --white:    #FFFFFF;
+      --border:   #E2E2E0;
+      --font-display: 'Oswald', Arial Narrow, sans-serif;
+      --font-body:    'DM Sans', system-ui, sans-serif;
+      --max: 1140px;
+      --radius: 6px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); font-size: 16px; color: var(--charcoal); background: var(--smoke); line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    .btn { display: inline-block; padding: 14px 28px; font-family: var(--font-body); font-size: 15px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; border-radius: var(--radius); cursor: pointer; transition: opacity .15s; border: none; }
+    .btn:hover { opacity: .88; }
+    .btn-primary { background: var(--red); color: var(--white); }
+    .btn-dark    { background: var(--black); color: var(--white); }
+    .btn-white   { background: var(--white); color: var(--red); }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--black); border-bottom: 3px solid var(--red); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { font-family: var(--font-body); font-size: 17px; font-weight: 700; color: var(--white); }
+    .nav-logo span { color: var(--red); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.7); transition: color .15s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; background: var(--red); color: var(--white); padding: 9px 18px; border-radius: var(--radius); transition: opacity .15s; }
+    .nav-cta:hover { opacity: .85; }
+    .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-mobile-toggle span { display: block; width: 22px; height: 2px; background: var(--white); margin: 5px 0; transition: .2s; }
+    .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--black); padding: 20px 24px; border-top: 1px solid rgba(255,255,255,.1); z-index: 99; }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; font-family: var(--font-body); font-size: 18px; font-weight: 600; color: var(--white); padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .mobile-menu a:last-child { border-bottom: none; color: var(--red); }
+    .nav-mobile-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+    .nav-mobile-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-mobile-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+    /* PAGE HERO */
+    .page-hero { background: var(--black); padding: 72px 0 64px; margin-top: 64px; }
+    .page-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+    .page-title { font-family: var(--font-display); font-size: clamp(32px, 5vw, 52px); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 14px; }
+    .page-sub { font-size: 17px; color: rgba(255,255,255,.6); max-width: 560px; line-height: 1.7; }
+
+    /* MAKES */
+    .makes-section { padding: 64px 0 48px; }
+    .section-label { font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+    .section-title { font-family: var(--font-display); font-size: clamp(24px, 3.5vw, 34px); font-weight: 700; color: var(--black); line-height: 1.2; margin-bottom: 16px; }
+    .section-sub { font-size: 16px; color: var(--steel); margin-bottom: 32px; line-height: 1.7; }
+    .makes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 10px;
+    }
+    .make-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--charcoal);
+      text-align: center;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .make-card:hover { border-color: var(--red); box-shadow: 0 2px 12px rgba(0,0,0,.07); }
+
+    /* SERVICES */
+    .services-section { background: var(--white); padding: 64px 0; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 24px;
+    }
+    .service-item { font-size: 14px; color: var(--charcoal); padding: 10px 14px; background: var(--smoke); border-radius: var(--radius); border-left: 3px solid var(--red); }
+
+    /* POLICY NOTES */
+    .policy-section { padding: 48px 0; }
+    .policy-note { display: flex; gap: 14px; align-items: flex-start; background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--red); border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 20px; margin-bottom: 12px; }
+    .policy-note-icon { font-size: 20px; flex-shrink: 0; line-height: 1.3; }
+    .policy-note strong { display: block; font-size: 14px; font-weight: 700; color: var(--black); margin-bottom: 3px; }
+    .policy-note p { font-size: 14px; color: var(--steel); line-height: 1.6; }
+    .policy-note a { color: var(--red); font-weight: 600; }
+
+    /* CTA STRIP */
+    .cta-strip { background: var(--red); padding: 52px 0; text-align: center; }
+    .cta-strip h2 { font-family: var(--font-display); font-size: clamp(24px, 4vw, 36px); font-weight: 700; color: var(--white); margin-bottom: 12px; }
+    .cta-strip p { font-size: 16px; color: rgba(255,255,255,.8); margin-bottom: 28px; }
+    .cta-strip-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* FOOTER */
+    footer { background: var(--black); padding: 40px 0; border-top: 3px solid var(--red); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .footer-logo { font-size: 16px; font-weight: 700; color: var(--white); }
+    .footer-logo span { color: var(--red); }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,.3); margin-top: 6px; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,.45); transition: color .15s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-social { display: flex; gap: 16px; }
+    .footer-social a { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.5); transition: color .15s; }
+    .footer-social a:hover { color: var(--white); }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-mobile-toggle { display: block; }
+      .makes-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .cta-strip-btns { flex-direction: column; align-items: center; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 480px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Auto Repair by <span>Mike</span></a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="appointment.html" class="nav-cta">Book Appointment</a>
+      <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="about.html" onclick="toggleMenu()">About</a>
+    <a href="services.html" onclick="toggleMenu()">Services</a>
+    <a href="index.html#contact" onclick="toggleMenu()">Contact</a>
+    <a href="appointment.html" onclick="toggleMenu()">Book Appointment →</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="page-eyebrow">Quakertown, PA</div>
+      <h1 class="page-title">Services &amp; Makes</h1>
+      <p class="page-sub">We work on most makes and models — domestic, Asian, and European. If you don't see your service or vehicle listed, just text Mike and ask.</p>
+    </div>
+  </div>
+
+  <!-- MAKES -->
+  <section class="makes-section">
+    <div class="container">
+      <div class="section-label">Vehicles We Service</div>
+      <h2 class="section-title">All Makes &amp; Models Welcome</h2>
+      <p class="section-sub">Dealer-trained at BMW, Honda, KIA, and Toyota — Mike knows your car regardless of what you drive.</p>
+      <div class="makes-grid">
+        <div class="make-card">Acura</div>
+        <div class="make-card">BMW</div>
+        <div class="make-card">Buick</div>
+        <div class="make-card">Cadillac</div>
+        <div class="make-card">Chevrolet</div>
+        <div class="make-card">Chrysler</div>
+        <div class="make-card">Dodge</div>
+        <div class="make-card">Ford</div>
+        <div class="make-card">GMC</div>
+        <div class="make-card">Honda</div>
+        <div class="make-card">Hyundai</div>
+        <div class="make-card">Infiniti</div>
+        <div class="make-card">Jeep</div>
+        <div class="make-card">Kia</div>
+        <div class="make-card">Land Rover</div>
+        <div class="make-card">Lexus</div>
+        <div class="make-card">Lincoln</div>
+        <div class="make-card">Mazda</div>
+        <div class="make-card">Mercedes</div>
+        <div class="make-card">MINI</div>
+        <div class="make-card">Mitsubishi</div>
+        <div class="make-card">Nissan</div>
+        <div class="make-card">Subaru</div>
+        <div class="make-card">Toyota</div>
+        <div class="make-card">Volkswagen</div>
+        <div class="make-card">Volvo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section">
+    <div class="container">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Full-Service Auto Repair</h2>
+      <p class="section-sub">From routine maintenance to complex diagnostics — if your car needs it, we probably do it.</p>
+      <div class="services-grid">
+        <div class="service-item">A/C Service</div>
+        <div class="service-item">Air Filter Replacement</div>
+        <div class="service-item">Alternators</div>
+        <div class="service-item">Batteries</div>
+        <div class="service-item">Brake Service</div>
+        <div class="service-item">Clutch Repair &amp; Replacement</div>
+        <div class="service-item">Computer Diagnostics</div>
+        <div class="service-item">CV Joints</div>
+        <div class="service-item">Differentials &amp; Axles</div>
+        <div class="service-item">Emission System Repairs</div>
+        <div class="service-item">Exhaust / Muffler Service</div>
+        <div class="service-item">Fuel Injection Cleaning</div>
+        <div class="service-item">Heating Systems</div>
+        <div class="service-item">Oil Changes</div>
+        <div class="service-item">PA Safety Inspections</div>
+        <div class="service-item">Preventative Maintenance</div>
+        <div class="service-item">Radiator Repair &amp; Flush</div>
+        <div class="service-item">Scheduled Maintenance</div>
+        <div class="service-item">Starters</div>
+        <div class="service-item">Suspension</div>
+        <div class="service-item">Timing Belt Replacement</div>
+        <div class="service-item">Tires</div>
+        <div class="service-item">Transmission Service</div>
+        <div class="service-item">Troubleshoot Check Engine Lights</div>
+        <div class="service-item">Tune-ups</div>
+        <div class="service-item">Water Pumps</div>
+        <div class="service-item">Wheel Alignment &amp; Balance</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POLICY NOTES -->
+  <section class="policy-section">
+    <div class="container">
+      <div class="policy-note">
+        <div class="policy-note-icon">🛡️</div>
+        <div>
+          <strong>2-Year / 24,000-Mile Warranty</strong>
+          <p>All labor performed at Auto Repair by Mike is backed by a 2-year or 24,000-mile warranty — whichever comes first. Dealership-level coverage from an independent shop you can actually trust.</p>
+        </div>
+      </div>
+      <div class="policy-note">
+        <div class="policy-note-icon">📋</div>
+        <div>
+          <strong>Getting a PA Inspection?</strong>
+          <p>You must bring your <strong>vehicle registration</strong> and <strong>proof of insurance</strong> — by law we can't complete your inspection without them. You can also attach photos when you <a href="appointment.html">book your appointment</a>.</p>
+        </div>
+      </div>
+      <div class="policy-note">
+        <div class="policy-note-icon">🔧</div>
+        <div>
+          <strong>Customer-Supplied Parts</strong>
+          <p>We do install parts you bring in under certain conditions — <a href="index.html#contact">contact us first</a> before purchasing. Labor warranty applies to our work only; we can't warranty parts we didn't supply.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-strip">
+    <h2>Ready to Book?</h2>
+    <p>Schedule online in minutes — no phone call required.</p>
+    <div class="cta-strip-btns">
+      <a href="appointment.html" class="btn btn-white">Book an Appointment</a>
+      <a href="sms:2155387259" class="btn" style="background:rgba(255,255,255,.15); color:var(--white); border: 2px solid rgba(255,255,255,.4);">Text Mike → 215-538-7259</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-logo">Auto Repair by <span>Mike</span></div>
+        <div class="footer-copy">© 2026 Auto Repair by Mike, LLC · Quakertown, PA</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="appointment.html">Book Appointment</a></li>
+      </ul>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/autorepairbymike/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://search.google.com/local/writereview?placeid=ChIJHSGgKdkYxIkRHj8EHv0rfOQ" target="_blank" rel="noopener">Leave a Review ★</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const toggle = document.querySelector('.nav-mobile-toggle');
+      menu.classList.toggle('open');
+      toggle.classList.toggle('open');
+    }
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('mobileMenu');
+      const toggle = document.querySelector('.nav-mobile-toggle');
+      if (menu && menu.classList.contains('open') && !menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('open');
+        toggle.classList.remove('open');
+      }
+    });
+  </script>
+
+</body>
+</html>
