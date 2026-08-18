@@ -155,29 +155,8 @@
     .map-info-value a:hover { color: var(--red); }
     .map-iframe { width: 100%; height: 400px; border: none; display: block; filter: grayscale(10%); }
 
-    /* ── CONTACT ── */
-    #contact { background: var(--smoke); padding-top: 48px; }
-    .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; align-items: start; }
-    .contact-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; }
-    .contact-card h3 { font-size: 18px; font-weight: 700; color: var(--black); margin-bottom: 6px; }
-    .contact-card .card-sub { font-size: 14px; color: var(--steel); margin-bottom: 24px; }
-    .contact-form { display: flex; flex-direction: column; gap: 14px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .form-field { display: flex; flex-direction: column; gap: 5px; }
-    .form-field label { font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--steel); }
-    .form-field input, .form-field textarea, .form-field select { font-family: var(--font-body); font-size: 15px; color: var(--charcoal); background: var(--smoke); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 14px; transition: border-color .15s; outline: none; }
-    .form-field input:focus, .form-field textarea:focus, .form-field select:focus { border-color: var(--red); }
-    .form-field textarea { resize: vertical; min-height: 90px; }
-    .form-note { font-size: 12px; color: var(--steel); }
-    .contact-info-stack { display: flex; flex-direction: column; gap: 14px; }
-    .contact-info-item { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; }
-    .contact-info-label { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--steel); margin-bottom: 5px; }
-    .contact-info-value { font-size: 18px; font-weight: 700; color: var(--black); }
-    .contact-info-value a { transition: color .15s; }
-    .contact-info-value a:hover { color: var(--red); }
-    .contact-info-detail { font-size: 13px; color: var(--steel); margin-top: 2px; }
-    .contact-book-cta { background: var(--red); border-radius: var(--radius); padding: 24px; text-align: center; }
-    .contact-book-cta p { font-size: 14px; color: rgba(255,255,255,.85); margin-bottom: 14px; line-height: 1.6; }
+    /* ── CONTACT / BOOK CTA ── */
+    #book-cta { padding-top: 64px; }
     .areas-served { margin-top: 40px; text-align: center; font-size: 13px; color: var(--steel); }
 
     /* ── STICKY MOBILE CTA ── */
@@ -204,7 +183,6 @@
       .reviews-grid { grid-template-columns: 1fr 1fr; }
       .map-wrap { grid-template-columns: 1fr; }
       .map-iframe { height: 300px; }
-      .contact-layout { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
       .nav-links, .nav-cta { display: none; }
@@ -214,7 +192,6 @@
       .hero-actions .btn { text-align: center; }
       .hours-inner { flex-direction: column; text-align: center; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
-      .form-row { grid-template-columns: 1fr; }
       .reviews-header { flex-direction: column; align-items: flex-start; }
       .sticky-mobile-cta { display: flex; }
       body { padding-bottom: 72px; }
@@ -250,9 +227,8 @@
       <ul class="nav-links">
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
       </ul>
-      <button type="button" class="nav-cta" onclick="sm_w_scheduler_open();">Book Appointment</button>
+      <a href="appointment.html" class="nav-cta">Book Appointment</a>
       <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
         <span></span><span></span><span></span>
       </button>
@@ -261,8 +237,8 @@
 
   <div class="mobile-menu" id="mobileMenu">
     <a href="about.html" onclick="toggleMenu()">About Mike</a>
-    <a href="#contact" onclick="toggleMenu()">Contact</a>
-    <a href="#" onclick="toggleMenu(); sm_w_scheduler_open(); return false;">Book Appointment →</a>
+    <a href="services.html" onclick="toggleMenu()">Services</a>
+    <a href="appointment.html" onclick="toggleMenu()">Book Appointment →</a>
   </div>
 
   <!-- HERO -->
@@ -283,7 +259,6 @@
         </p>
         <div class="hero-actions">
           <button type="button" class="btn btn-primary" onclick="sm_w_scheduler_open();">Book an Appointment</button>
-          <a href="#contact" class="btn btn-outline">Send a Message</a>
         </div>
         <div class="hero-stats">
           <div>
@@ -373,10 +348,6 @@
           <div class="map-info-value">Mon – Fri<br/>8:00 AM – 4:30 PM</div>
         </div>
         <div>
-          <div class="map-info-label">Get in Touch</div>
-          <div class="map-info-value"><a href="#contact">Send us a message →</a></div>
-        </div>
-        <div>
           <div class="map-info-label">Book Online</div>
           <div class="map-info-value"><a href="#" onclick="sm_w_scheduler_open(); return false;">Schedule an appointment →</a></div>
         </div>
@@ -392,82 +363,13 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
+  <!-- CTA STRIP -->
+  <section id="book-cta" style="background: var(--smoke); text-align: center;">
     <div class="container">
-      <div class="section-label">Get In Touch</div>
-      <h2 class="section-title">Let's Get Your Car<br/>Back on the Road</h2>
-      <p class="section-sub">
-        Questions or not quite ready to book? Send a message below. Ready to schedule? <a href="#" onclick="sm_w_scheduler_open(); return false;" style="color:var(--red); font-weight:600;">Book an appointment →</a>
-      </p>
-
-      <div class="contact-layout">
-        <div class="contact-card">
-          <h3>Send Us a Message</h3>
-          <p class="card-sub">General questions, quick inquiries — we'll get back to you as soon as possible!</p>
-          <!-- Google Form backend — submits to Google Sheets without showing Google's UI -->
-          <form
-            class="contact-form"
-            action="https://docs.google.com/forms/d/e/1FAIpQLSfxliEW7qqigfNLU7nuSv0fA9G8UOq4FBQcJ_Kj2a6nO_540Q/formResponse"
-            method="POST"
-            target="_blank"
-          >
-            <div class="form-row">
-              <div class="form-field">
-                <label for="fname">First Name</label>
-                <input type="text" id="fname" name="entry.132087678" required placeholder="Jane" />
-              </div>
-              <div class="form-field">
-                <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="entry.117385751" required placeholder="Smith" />
-              </div>
-            </div>
-            <div class="form-field">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="entry.REPLACE_WITH_EMAIL_ID" required placeholder="jane@example.com" />
-            </div>
-            <div class="form-field">
-              <label for="phone">Phone (optional)</label>
-              <input type="tel" id="phone" name="entry.697374086" placeholder="215-555-0100" />
-            </div>
-            <div class="form-field">
-              <label for="message">What's going on?</label>
-              <textarea id="message" name="entry.1703405713" required placeholder="Ask us anything..."></textarea>
-            </div>
-            <div class="form-field">
-              <label for="preferred">Preferred way to reach you</label>
-              <select id="preferred" name="entry.1170706162" required>
-                <option value="">Select one...</option>
-                <option value="Email">Email</option>
-                <option value="Phone call">Phone call</option>
-              </select>
-            </div>
-            <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Send Message</button>
-          </form>
-        </div>
-
-        <div class="contact-info-stack">
-          <div class="contact-info-item">
-            <div class="contact-info-label">Book Online</div>
-            <div class="contact-info-value"><a href="#" onclick="sm_w_scheduler_open(); return false;">Schedule an appointment →</a></div>
-            <div class="contact-info-detail">Fastest way to get on the schedule</div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-label">Location</div>
-            <div class="contact-info-value">13 N Hellertown Ave</div>
-            <div class="contact-info-detail">Quakertown, PA 18951</div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-label">Hours</div>
-            <div class="contact-info-value">Mon – Fri</div>
-            <div class="contact-info-detail">8:00 AM – 4:30 PM · Closed weekends</div>
-          </div>
-          <div class="contact-book-cta">
-            <p>Ready to get on the schedule? The fastest way is booking online — pick a time that works and we'll take it from there.</p>
-            <button type="button" class="btn btn-outline" style="width:100%; text-align:center; display:block;" onclick="sm_w_scheduler_open();">Book an Appointment →</button>
-          </div>
-        </div>
-      </div>
+      <div class="section-label" style="text-align:center;">Get In Touch</div>
+      <h2 class="section-title">Let's Get Your Car Back on the Road</h2>
+      <p class="section-sub" style="margin: 0 auto 32px;">Book online in minutes — pick a time that works and we'll confirm during business hours.</p>
+      <button type="button" class="btn btn-primary" onclick="sm_w_scheduler_open();">Book an Appointment</button>
 
       <div class="areas-served">
         Proudly serving <strong>Quakertown</strong>, Trumbauersville, Richlandtown, Perkasie, Spinnerstown, and Allentown, PA.
@@ -484,38 +386,9 @@
       </div>
       <ul class="footer-links">
         <li><a href="about.html">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="services.html">Services</a></li>
         <li><a href="appointment.html">Book Appointment</a></li>
       </ul>
       <div class="footer-social">
         <a href="https://www.facebook.com/autorepairbymike/" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://search.google.com/local/writereview?placeid=ChIJHSGgKdkYxIkRHj8EHv0rfOQ" target="_blank" rel="noopener">Leave a Review ★</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- STICKY MOBILE CTA -->
-  <div class="sticky-mobile-cta">
-    <a href="#" class="sticky-cta-book" onclick="sm_w_scheduler_open(); return false;">Book Appointment</a>
-    <a href="#contact" class="sticky-cta-contact">Contact</a>
-  </div>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('mobileMenu');
-      const toggle = document.querySelector('.nav-mobile-toggle');
-      menu.classList.toggle('open');
-      toggle.classList.toggle('open');
-    }
-    document.addEventListener('click', function(e) {
-      const menu = document.getElementById('mobileMenu');
-      const toggle = document.querySelector('.nav-mobile-toggle');
-      if (menu.classList.contains('open') && !menu.contains(e.target) && !toggle.contains(e.target)) {
-        menu.classList.remove('open');
-        toggle.classList.remove('open');
-      }
-    });
-  </script>
-
-</body>
-</html>
+        
