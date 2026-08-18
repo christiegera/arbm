@@ -156,9 +156,8 @@
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
       </ul>
-      <button type="button" class="nav-cta" onclick="sm_w_scheduler_open();">Book Appointment</button>
+      <a href="appointment.html" class="nav-cta">Book Appointment</a>
       <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
         <span></span><span></span><span></span>
       </button>
@@ -168,8 +167,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html" onclick="toggleMenu()">Home</a>
     <a href="services.html" onclick="toggleMenu()">Services</a>
-    <a href="index.html#contact" onclick="toggleMenu()">Contact</a>
-    <a href="#" onclick="toggleMenu(); sm_w_scheduler_open(); return false;">Book Appointment →</a>
+    <a href="appointment.html" onclick="toggleMenu()">Book Appointment →</a>
   </div>
 
   <!-- PAGE HERO -->
@@ -248,7 +246,6 @@
     <p>Schedule online in minutes — no phone call required.</p>
     <div class="cta-strip-btns">
       <button type="button" class="btn btn-white" onclick="sm_w_scheduler_open();">Book an Appointment</button>
-      <a href="index.html#contact" class="btn" style="background:rgba(255,255,255,.15); color:var(--white); border: 2px solid rgba(255,255,255,.4);">Send a Message</a>
     </div>
   </div>
 
@@ -260,7 +257,7 @@
       </div>
       <ul class="footer-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="services.html">Services</a></li>
         <li><a href="appointment.html">Book Appointment</a></li>
       </ul>
     </div>
@@ -282,6 +279,17 @@
         toggle.classList.remove('open');
       }
     });
+  </script>
+
+  <!-- Fix: open the Shop Monkey scheduler reliably from the top page.
+       Their bundled sm_w_scheduler_open() posts to window.parent, which is
+       wrong when the script runs on the top-level page (no parent). We
+       override it to post to the top window, where the open listener lives. -->
+  <script>
+    function sm_w_scheduler_open() {
+      window.postMessage({ action: 'open', source: 'sm_w_scheduler' }, '*');
+      return false;
+    }
   </script>
 </body>
 </html>
