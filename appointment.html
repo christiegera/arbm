@@ -96,6 +96,10 @@
       line-height: 1.7;
     }
     .page-sub a { color: var(--red); font-weight: 600; }
+    .scheduler-cta-btn { display: inline-block; margin-top: 4px; padding: 14px 28px; font-family: var(--font-body); font-size: 15px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; background: var(--red); color: var(--white); border: none; border-radius: var(--radius); cursor: pointer; transition: opacity .15s; }
+    .scheduler-cta-btn:hover { opacity: .88; }
+    .or-divider { display: flex; align-items: center; gap: 16px; margin: 28px 0 20px; color: var(--steel); font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+    .or-divider::before, .or-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
     /* =====================
        INSPECTION ALERT (top of page)
@@ -204,6 +208,8 @@
     gtag('js', new Date());
     gtag('config', 'G-QQBJD4V3GH');
   </script>
+  <!-- Shop Monkey online scheduler (opens via sm_w_scheduler_open()) -->
+  <script src="https://app.shopmonkey.cloud/scripts/scheduler.js?lid=8b3a712c-4d2a-45fe-9522-8ef144f88aa7&e=stable" type="text/javascript" id="sm_w_scheduler" defer></script>
 </head>
 <body>
 
@@ -233,13 +239,20 @@
     <div class="eyebrow">Quakertown, PA</div>
     <h1 class="page-title">Book Your Appointment</h1>
     <p class="page-sub">
-      Fill out your info below and we'll confirm your appointment during business hours.<br/><br/>
-      <strong style="color:var(--red);">Please include your vehicle's year, make, and model</strong> so we can be prepared for your visit.<br/><br/>
-      Prefer to text instead? <a href="sms:2678481464">Text Mike directly →</a>
+      Pick a time that works for you and we'll confirm during business hours.<br/><br/>
+      <button type="button" class="scheduler-cta-btn" onclick="sm_w_scheduler_open();">Pick a Time →</button>
     </p>
   </div>
 
   <div class="container">
+    <div class="or-divider">Or tell us what's going on</div>
+
+    <p class="page-sub" style="text-align:center; margin-bottom:28px;">
+      Not sure what you need, or want to attach photos and documents? Fill out the request below instead.<br/>
+      <strong style="color:var(--red);">Please include your vehicle's year, make, and model</strong> so we can be prepared.<br/>
+      Have a question first? <a href="index.html#contact">Send us a message →</a>
+    </p>
+
     <div class="reminder-banner">
       <div class="reminder-icon">📋</div>
       <div>
@@ -265,7 +278,6 @@
     </div>
 
     <div class="trust-strip">
-      <div><span>267-848-1464</span> · Text or call</div>
       <div><span>13 N Hellertown Ave</span> · Quakertown, PA</div>
       <div><span>Mon–Fri</span> · 8am–4:30pm</div>
     </div>
