@@ -72,6 +72,8 @@
     .btn-primary { background: var(--red); color: var(--white); }
     .btn-outline { background: transparent; color: var(--white); border: 2px solid var(--white); }
     .btn-dark    { background: var(--black); color: var(--white); }
+    /* buttons that open the scheduler popup — match anchor .btn exactly */
+    button.btn { font: inherit; font-size: 15px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; line-height: 1.6; }
 
     section { padding: 80px 0; }
     .section-label {
@@ -93,7 +95,7 @@
     .nav-links { display: flex; gap: 28px; list-style: none; }
     .nav-links a { font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.7); transition: color .15s; }
     .nav-links a:hover { color: var(--white); }
-    .nav-cta { font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; background: var(--red); color: var(--white); padding: 9px 18px; border-radius: var(--radius); transition: opacity .15s; }
+    .nav-cta { font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; background: var(--red); color: var(--white); padding: 9px 18px; border: none; border-radius: var(--radius); cursor: pointer; transition: opacity .15s; }
     .nav-cta:hover { opacity: .85; }
     .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
     .nav-mobile-toggle span { display: block; width: 22px; height: 2px; background: var(--white); margin: 5px 0; transition: .2s; }
@@ -123,7 +125,8 @@
     .hours-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
     .hours-text { font-family: var(--font-body); font-size: 18px; font-weight: 700; color: var(--white); }
     .hours-detail { font-size: 14px; color: rgba(255,255,255,.8); margin-top: 3px; }
-    .hours-phone { font-family: var(--font-body); font-size: 22px; font-weight: 700; color: var(--white); }
+    .hours-cta { font-family: var(--font-body); font-size: 15px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; background: var(--white); color: var(--red); padding: 12px 22px; border: none; border-radius: var(--radius); cursor: pointer; transition: opacity .15s; }
+    .hours-cta:hover { opacity: .85; }
 
     /* ── REVIEWS ── */
     #reviews { background: var(--smoke); }
@@ -162,8 +165,8 @@
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .form-field { display: flex; flex-direction: column; gap: 5px; }
     .form-field label { font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--steel); }
-    .form-field input, .form-field textarea { font-family: var(--font-body); font-size: 15px; color: var(--charcoal); background: var(--smoke); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 14px; transition: border-color .15s; outline: none; }
-    .form-field input:focus, .form-field textarea:focus { border-color: var(--red); }
+    .form-field input, .form-field textarea, .form-field select { font-family: var(--font-body); font-size: 15px; color: var(--charcoal); background: var(--smoke); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 14px; transition: border-color .15s; outline: none; }
+    .form-field input:focus, .form-field textarea:focus, .form-field select:focus { border-color: var(--red); }
     .form-field textarea { resize: vertical; min-height: 90px; }
     .form-note { font-size: 12px; color: var(--steel); }
     .contact-info-stack { display: flex; flex-direction: column; gap: 14px; }
@@ -181,7 +184,7 @@
     .sticky-mobile-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; background: var(--black); border-top: 2px solid var(--red); padding: 12px 16px; gap: 10px; }
     .sticky-mobile-cta a { flex: 1; text-align: center; padding: 12px 8px; font-family: var(--font-body); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; border-radius: var(--radius); }
     .sticky-cta-book { background: var(--red); color: var(--white); }
-    .sticky-cta-text { background: rgba(255,255,255,.1); color: var(--white); border: 1px solid rgba(255,255,255,.2); }
+    .sticky-cta-contact { background: rgba(255,255,255,.1); color: var(--white); border: 1px solid rgba(255,255,255,.2); }
 
     /* ── FOOTER ── */
     footer { background: var(--black); padding: 40px 0; border-top: 3px solid var(--red); }
@@ -235,6 +238,8 @@
     gtag('js', new Date());
     gtag('config', 'G-QQBJD4V3GH');
   </script>
+  <!-- Shop Monkey online scheduler (opens via sm_w_scheduler_open()) -->
+  <script src="https://app.shopmonkey.cloud/scripts/scheduler.js?lid=8b3a712c-4d2a-45fe-9522-8ef144f88aa7&e=stable" type="text/javascript" id="sm_w_scheduler" defer></script>
 </head>
 <body>
 
@@ -247,7 +252,7 @@
         <li><a href="services.html">Services</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a href="appointment.html" class="nav-cta">Book Appointment</a>
+      <button type="button" class="nav-cta" onclick="sm_w_scheduler_open();">Book Appointment</button>
       <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
         <span></span><span></span><span></span>
       </button>
@@ -257,7 +262,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="about.html" onclick="toggleMenu()">About Mike</a>
     <a href="#contact" onclick="toggleMenu()">Contact</a>
-    <a href="appointment.html" onclick="toggleMenu()">Book Appointment →</a>
+    <a href="#" onclick="toggleMenu(); sm_w_scheduler_open(); return false;">Book Appointment →</a>
   </div>
 
   <!-- HERO -->
@@ -277,8 +282,8 @@
           Complete auto repair for all makes and models. Born and raised in Quakertown — this is our community too.
         </p>
         <div class="hero-actions">
-          <a href="appointment.html" class="btn btn-primary">Book an Appointment</a>
-          <a href="sms:2678481464" class="btn btn-outline">Text Mike — he'll get back to you</a>
+          <button type="button" class="btn btn-primary" onclick="sm_w_scheduler_open();">Book an Appointment</button>
+          <a href="#contact" class="btn btn-outline">Send a Message</a>
         </div>
         <div class="hero-stats">
           <div>
@@ -309,7 +314,7 @@
         <div class="hours-text">Open Monday – Friday, 8:00 AM – 4:30 PM</div>
         <div class="hours-detail">13 N Hellertown Ave, Quakertown PA 18951</div>
       </div>
-      <a href="sms:2678481464" class="hours-phone">Text Mike → 267-848-1464</a>
+      <button type="button" class="hours-cta" onclick="sm_w_scheduler_open();">Book an Appointment →</button>
     </div>
   </div>
 
@@ -368,12 +373,12 @@
           <div class="map-info-value">Mon – Fri<br/>8:00 AM – 4:30 PM</div>
         </div>
         <div>
-          <div class="map-info-label">Text Mike</div>
-          <div class="map-info-value"><a href="sms:2678481464">267-848-1464</a></div>
+          <div class="map-info-label">Get in Touch</div>
+          <div class="map-info-value"><a href="#contact">Send us a message →</a></div>
         </div>
         <div>
           <div class="map-info-label">Book Online</div>
-          <div class="map-info-value"><a href="appointment.html">Schedule an appointment →</a></div>
+          <div class="map-info-value"><a href="#" onclick="sm_w_scheduler_open(); return false;">Schedule an appointment →</a></div>
         </div>
       </div>
       <iframe
@@ -393,7 +398,7 @@
       <div class="section-label">Get In Touch</div>
       <h2 class="section-title">Let's Get Your Car<br/>Back on the Road</h2>
       <p class="section-sub">
-        Questions or not quite ready to book? Send a message below. Ready to schedule? <a href="appointment.html" style="color:var(--red); font-weight:600;">Book an appointment →</a>
+        Questions or not quite ready to book? Send a message below. Ready to schedule? <a href="#" onclick="sm_w_scheduler_open(); return false;" style="color:var(--red); font-weight:600;">Book an appointment →</a>
       </p>
 
       <div class="contact-layout">
@@ -433,7 +438,6 @@
               <label for="preferred">Preferred way to reach you</label>
               <select id="preferred" name="entry.1170706162" required>
                 <option value="">Select one...</option>
-                <option value="Text">Text</option>
                 <option value="Email">Email</option>
                 <option value="Phone call">Phone call</option>
               </select>
@@ -444,9 +448,9 @@
 
         <div class="contact-info-stack">
           <div class="contact-info-item">
-            <div class="contact-info-label">Text Mike</div>
-            <div class="contact-info-value"><a href="sms:2678481464">267-848-1464</a></div>
-            <div class="contact-info-detail">Texting is fastest · calls also accepted</div>
+            <div class="contact-info-label">Book Online</div>
+            <div class="contact-info-value"><a href="#" onclick="sm_w_scheduler_open(); return false;">Schedule an appointment →</a></div>
+            <div class="contact-info-detail">Fastest way to get on the schedule</div>
           </div>
           <div class="contact-info-item">
             <div class="contact-info-label">Location</div>
@@ -459,8 +463,8 @@
             <div class="contact-info-detail">8:00 AM – 4:30 PM · Closed weekends</div>
           </div>
           <div class="contact-book-cta">
-            <p>Ready to get on the schedule? The fastest way is the online booking form — attach your docs and we'll take it from there.</p>
-            <a href="appointment.html" class="btn btn-outline" style="width:100%; text-align:center; display:block;">Book an Appointment →</a>
+            <p>Ready to get on the schedule? The fastest way is booking online — pick a time that works and we'll take it from there.</p>
+            <button type="button" class="btn btn-outline" style="width:100%; text-align:center; display:block;" onclick="sm_w_scheduler_open();">Book an Appointment →</button>
           </div>
         </div>
       </div>
@@ -492,8 +496,8 @@
 
   <!-- STICKY MOBILE CTA -->
   <div class="sticky-mobile-cta">
-    <a href="appointment.html" class="sticky-cta-book">Book Appointment</a>
-    <a href="sms:2678481464" class="sticky-cta-text">Text Mike</a>
+    <a href="#" class="sticky-cta-book" onclick="sm_w_scheduler_open(); return false;">Book Appointment</a>
+    <a href="#contact" class="sticky-cta-contact">Contact</a>
   </div>
 
   <script>
