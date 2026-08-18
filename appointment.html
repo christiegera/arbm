@@ -220,7 +220,6 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
       </ul>
       <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
         <span></span><span></span><span></span>
@@ -232,7 +231,6 @@
     <a href="index.html" onclick="toggleMenu()">Home</a>
     <a href="about.html" onclick="toggleMenu()">About</a>
     <a href="services.html" onclick="toggleMenu()">Services</a>
-    <a href="index.html#contact" onclick="toggleMenu()">Contact</a>
   </div>
 
   <div class="page-header container">
@@ -249,8 +247,7 @@
 
     <p class="page-sub" style="text-align:center; margin-bottom:28px;">
       Not sure what you need, or want to attach photos and documents? Fill out the request below instead.<br/>
-      <strong style="color:var(--red);">Please include your vehicle's year, make, and model</strong> so we can be prepared.<br/>
-      Have a question first? <a href="index.html#contact">Send us a message →</a>
+      <strong style="color:var(--red);">Please include your vehicle's year, make, and model</strong> so we can be prepared.
     </p>
 
     <div class="reminder-banner">
@@ -273,7 +270,7 @@
       <div style="font-size:20px; flex-shrink:0; line-height:1.3;">🔧</div>
       <div>
         <strong style="display:block; font-size:14px; font-weight:700; color:var(--black); margin-bottom:3px;">Customer-Supplied Parts</strong>
-        <p style="font-size:14px; color:var(--steel); line-height:1.6;">We do install parts you bring in under certain conditions — <a href="index.html#contact" style="color:var(--red); font-weight:600;">contact us first</a> before purchasing. Labor warranty applies to our work only; we can't warranty parts we didn't supply.</p>
+        <p style="font-size:14px; color:var(--steel); line-height:1.6;">We do install parts you bring in under certain conditions — ask when you book before purchasing. Labor warranty applies to our work only; we can't warranty parts we didn't supply.</p>
       </div>
     </div>
 
@@ -315,6 +312,17 @@
         toggle.classList.remove('open');
       }
     });
+  </script>
+
+  <!-- Fix: open the Shop Monkey scheduler reliably from the top page.
+       Their bundled sm_w_scheduler_open() posts to window.parent, which is
+       wrong when the script runs on the top-level page (no parent). We
+       override it to post to the top window, where the open listener lives. -->
+  <script>
+    function sm_w_scheduler_open() {
+      window.postMessage({ action: 'open', source: 'sm_w_scheduler' }, '*');
+      return false;
+    }
   </script>
 </body>
 </html>
