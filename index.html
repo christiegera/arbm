@@ -391,4 +391,43 @@
       </ul>
       <div class="footer-social">
         <a href="https://www.facebook.com/autorepairbymike/" target="_blank" rel="noopener">Facebook</a>
-        
+        <a href="https://search.google.com/local/writereview?placeid=ChIJHSGgKdkYxIkRHj8EHv0rfOQ" target="_blank" rel="noopener">Leave a Review ★</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- STICKY MOBILE CTA -->
+  <div class="sticky-mobile-cta">
+    <a href="#" class="sticky-cta-book" onclick="sm_w_scheduler_open(); return false;">Book an Appointment</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const toggle = document.querySelector('.nav-mobile-toggle');
+      menu.classList.toggle('open');
+      toggle.classList.toggle('open');
+    }
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('mobileMenu');
+      const toggle = document.querySelector('.nav-mobile-toggle');
+      if (menu.classList.contains('open') && !menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('open');
+        toggle.classList.remove('open');
+      }
+    });
+  </script>
+
+  <!-- Fix: open the Shop Monkey scheduler reliably from the top page.
+       Their bundled sm_w_scheduler_open() posts to window.parent, which is
+       wrong when the script runs on the top-level page (no parent). We
+       override it to post to the top window, where the open listener lives. -->
+  <script>
+    function sm_w_scheduler_open() {
+      window.postMessage({ action: 'open', source: 'sm_w_scheduler' }, '*');
+      return false;
+    }
+  </script>
+
+</body>
+</html>
