@@ -188,6 +188,18 @@
     }
     .trust-strip span { font-weight: 600; color: var(--charcoal); }
 
+    /* =====================
+       SCHEDULER LEGEND + INLINE EMBED
+    ===================== */
+    .scheduler-legend { display: flex; gap: 14px; align-items: flex-start; background: #FFF4ED; border: 1px solid #FFD6B8; border-left: 4px solid var(--red); border-radius: var(--radius); padding: 18px 22px; margin-bottom: 20px; }
+    .scheduler-legend .icon { font-size: 22px; line-height: 1; flex-shrink: 0; }
+    .scheduler-legend .legend-title { font-size: 14px; font-weight: 700; color: var(--black); margin-bottom: 4px; }
+    .scheduler-legend p { font-size: 14px; color: var(--steel); line-height: 1.6; }
+    .scheduler-legend .swatch { display: inline-block; padding: 0 8px; border-radius: 4px; font-weight: 700; }
+    .scheduler-legend .swatch-open { background: #d9d9d9; color: #333; }
+    .scheduler-legend .swatch-none { background: transparent; border: 1px dashed #bbb; color: #999; }
+    .scheduler-embed { background: var(--white); border-radius: 12px; overflow: hidden; height: 850px; margin: 0 0 40px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+
     @media (max-width: 600px) {
       .nav-links, .nav-cta { display: none; }
       .nav-mobile-toggle { display: block; }
@@ -208,8 +220,7 @@
     gtag('js', new Date());
     gtag('config', 'G-QQBJD4V3GH');
   </script>
-  <!-- Shop Monkey online scheduler (opens via sm_w_scheduler_open()) -->
-  <script src="https://app.shopmonkey.cloud/scripts/scheduler.js?lid=8b3a712c-4d2a-45fe-9522-8ef144f88aa7&e=stable" type="text/javascript" id="sm_w_scheduler" defer></script>
+  <!-- Shop Monkey scheduler is embedded inline in the booking section below (embed=true) -->
 </head>
 <body>
 
@@ -237,33 +248,29 @@
     <div class="eyebrow">Quakertown, PA</div>
     <h1 class="page-title">Book Your Appointment</h1>
     <p class="page-sub">
-      Pick a time that works for you and we'll confirm during business hours.<br/><br/>
-      <button type="button" class="scheduler-cta-btn" onclick="sm_w_scheduler_open();">Pick a Time →</button>
+      Pick a time below that works for you and we'll confirm during business hours.
     </p>
   </div>
 
   <div class="container">
-    <div class="or-divider">Or tell us what's going on</div>
+    <div class="scheduler-legend">
+      <div class="icon">📅</div>
+      <div>
+        <div class="legend-title">How to read the calendar</div>
+        <p>Dates shown in <span class="swatch swatch-open">gray</span> are <strong>open</strong> — click one to pick your time. Dates with <span class="swatch swatch-none">no color</span> are already booked or unavailable.</p>
+      </div>
+    </div>
 
-    <p class="page-sub" style="text-align:center; margin-bottom:28px;">
-      Not sure what you need, or want to attach photos and documents? Fill out the request below instead.<br/>
-      <strong style="color:var(--red);">Please include your vehicle's year, make, and model</strong> so we can be prepared.
-    </p>
+    <div class="scheduler-embed">
+      <script src="https://app.shopmonkey.cloud/scripts/scheduler.js?lid=8b3a712c-4d2a-45fe-9522-8ef144f88aa7&e=stable&embed=true" type="text/javascript" id="sm_w_scheduler" defer></script>
+    </div>
 
     <div class="reminder-banner">
       <div class="reminder-icon">📋</div>
       <div>
         <strong>Booking an inspection?</strong>
-        <p>Bring (or attach below) your <span>vehicle registration</span> and <span>proof of insurance</span> — we can't complete an inspection without them, and it's the #1 reason appointments get delayed.</p>
+        <p>Bring your <span>vehicle registration</span> and <span>proof of insurance</span> — we can't complete an inspection without them, and it's the #1 reason appointments get delayed.</p>
       </div>
-    </div>
-
-    <div class="form-wrap">
-      <iframe
-        src="https://app.shopmonkey.cloud/public/quote-request/8b3a712c-4d2a-45fe-9522-8ef144f88aa7"
-        title="Request an Appointment"
-        id="sm-form"
-      ></iframe>
     </div>
 
     <div class="policy-note" style="margin-top:24px;">
@@ -281,23 +288,6 @@
   </div>
 
   <script>
-    // Listen for Shop Monkey postMessage events and auto-resize the iframe
-    // to its actual content height, eliminating the inner scrollbar.
-    window.addEventListener('message', function(e) {
-      if (e.origin !== 'https://app.shopmonkey.cloud') return;
-      if (e.data && e.data.source === 'sm_wrf' && e.data.dataLayer) {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push(e.data.dataLayer);
-      }
-      // If Shop Monkey ever sends a height value, use it
-      if (e.data && typeof e.data.height === 'number') {
-        document.getElementById('sm-form').style.minHeight = e.data.height + 'px';
-      }
-    });
-  </script>
-
-
-  <script>
     function toggleMenu() {
       const menu = document.getElementById('mobileMenu');
       const toggle = document.querySelector('.nav-mobile-toggle');
@@ -312,17 +302,6 @@
         toggle.classList.remove('open');
       }
     });
-  </script>
-
-  <!-- Fix: open the Shop Monkey scheduler reliably from the top page.
-       Their bundled sm_w_scheduler_open() posts to window.parent, which is
-       wrong when the script runs on the top-level page (no parent). We
-       override it to post to the top window, where the open listener lives. -->
-  <script>
-    function sm_w_scheduler_open() {
-      window.postMessage({ action: 'open', source: 'sm_w_scheduler' }, '*');
-      return false;
-    }
   </script>
 </body>
 </html>
