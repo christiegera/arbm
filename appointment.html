@@ -68,7 +68,7 @@
        PAGE HEADER
     ===================== */
     .page-header {
-      padding: 56px 0 32px;
+      padding: 56px 0 20px;
       margin-top: 64px;
       text-align: center;
     }
@@ -191,14 +191,13 @@
     /* =====================
        SCHEDULER LEGEND + INLINE EMBED
     ===================== */
-    .scheduler-legend { display: flex; gap: 14px; align-items: flex-start; background: #FFF4ED; border: 1px solid #FFD6B8; border-left: 4px solid var(--red); border-radius: var(--radius); padding: 18px 22px; margin-bottom: 20px; }
+    .scheduler-legend { display: flex; gap: 14px; align-items: flex-start; background: #FFF4ED; border: 1px solid #FFD6B8; border-left: 4px solid var(--red); border-radius: var(--radius); padding: 18px 22px; margin-bottom: 12px; }
     .scheduler-legend .icon { font-size: 22px; line-height: 1; flex-shrink: 0; }
     .scheduler-legend .legend-title { font-size: 14px; font-weight: 700; color: var(--black); margin-bottom: 4px; }
     .scheduler-legend p { font-size: 14px; color: var(--steel); line-height: 1.6; }
-    .scheduler-legend .swatch { display: inline-block; padding: 0 8px; border-radius: 4px; font-weight: 700; }
-    .scheduler-legend .swatch-open { background: #d9d9d9; color: #333; }
-    .scheduler-legend .swatch-none { background: transparent; border: 1px dashed #bbb; color: #999; }
-    .scheduler-embed { background: var(--white); border-radius: 12px; overflow: hidden; height: 850px; margin: 0 0 40px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
+    .scheduler-legend .open-num { color: #2F6FED; font-weight: 700; }
+    .legend-shot { display: block; width: 100%; max-width: 340px; margin-top: 12px; border: 1px solid var(--border); border-radius: 6px; }
+    .scheduler-embed { background: var(--white); border-radius: 12px; overflow: hidden; height: 720px; margin: 0 0 28px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
 
     @media (max-width: 600px) {
       .nav-links, .nav-cta { display: none; }
@@ -256,8 +255,9 @@
     <div class="scheduler-legend">
       <div class="icon">📅</div>
       <div>
-        <div class="legend-title">How to read the calendar</div>
-        <p>Dates shown in <span class="swatch swatch-open">gray</span> are <strong>open</strong> — click one to pick your time. Dates with <span class="swatch swatch-none">no color</span> are already booked or unavailable.</p>
+        <div class="legend-title">How to book</div>
+        <p>Dates highlighted with <span class="open-num">blue numbers</span> are available to book!</p>
+        <img src="booking-calendar-help.jpg" alt="Example calendar: dates with blue numbers are open to schedule" class="legend-shot" />
       </div>
     </div>
 
