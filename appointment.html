@@ -114,6 +114,7 @@
       max-width: 480px;
       margin: 0 auto 12px;
     }
+    .inspection-alert a { color: var(--red); font-weight: 700; text-decoration: none; }
     .inspection-alert-icon { font-size: 24px; flex-shrink: 0; line-height: 1.2; }
     .inspection-alert strong { display: block; font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 5px; }
     .inspection-alert p { font-size: 14px; color: rgba(255,255,255,.65); line-height: 1.6; }
@@ -193,7 +194,6 @@
        SCHEDULER LEGEND + INLINE EMBED
     ===================== */
     .scheduler-legend { display: flex; gap: 14px; align-items: flex-start; background: #FFF4ED; border: 1px solid #FFD6B8; border-left: 4px solid var(--red); border-radius: var(--radius); padding: 18px 22px; max-width: 480px; margin: 0 auto 12px; }
-
     .scheduler-legend .icon { font-size: 22px; line-height: 1; flex-shrink: 0; }
     .scheduler-legend .legend-title { font-size: 14px; font-weight: 700; color: var(--black); margin-bottom: 4px; }
     .scheduler-legend p { font-size: 14px; color: var(--steel); line-height: 1.6; }
@@ -232,6 +232,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
+        <li><a href="sms:+12678481464">Text Us</a></li>
       </ul>
       <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
         <span></span><span></span><span></span>
@@ -243,6 +244,7 @@
     <a href="index.html" onclick="toggleMenu()">Home</a>
     <a href="about.html" onclick="toggleMenu()">About</a>
     <a href="services.html" onclick="toggleMenu()">Services</a>
+    <a href="sms:+12678481464" onclick="toggleMenu()">Text Us</a>
   </div>
 
   <div class="page-header container">
@@ -262,14 +264,15 @@
         <img src="booking-calendar-help.jpg" alt="Example calendar: dates with blue numbers are open to schedule" class="legend-shot" />
       </div>
     </div>
-    
+
     <div class="inspection-alert">
       <div class="inspection-alert-icon">🔑</div>
       <div>
         <strong>These are <em>drop-off</em> appointments</strong>
-        <p>The times here are for dropping your vehicle off, not waiting on it. Leave it with us and we'll get to it during the day. Need to wait while we work? That's by request only, so mention it when you book and we'll set it up.</p>
+        <p>The times here are for dropping your vehicle off, not waiting on it. Leave it with us and we'll get to it during the day. Need to wait while we work? Don't book that online, just text us at <a href="sms:+12678481464">(267) 848-1464</a> and we'll set it up.</p>
       </div>
     </div>
+
     <div class="scheduler-embed">
       <script src="https://app.shopmonkey.cloud/scripts/scheduler.js?lid=8b3a712c-4d2a-45fe-9522-8ef144f88aa7&e=stable&embed=true" type="text/javascript" id="sm_w_scheduler" defer></script>
     </div>
