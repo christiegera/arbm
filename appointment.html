@@ -111,7 +111,8 @@
       background: var(--black);
       border-radius: var(--radius);
       padding: 20px 24px;
-      margin-bottom: 16px;
+      max-width: 480px;
+      margin: 0 auto 12px;
     }
     .inspection-alert-icon { font-size: 24px; flex-shrink: 0; line-height: 1.2; }
     .inspection-alert strong { display: block; font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 5px; }
@@ -261,7 +262,14 @@
         <img src="booking-calendar-help.jpg" alt="Example calendar: dates with blue numbers are open to schedule" class="legend-shot" />
       </div>
     </div>
-
+    
+    <div class="inspection-alert">
+      <div class="inspection-alert-icon">🔑</div>
+      <div>
+        <strong>These are <em>drop-off</em> appointments</strong>
+        <p>The times here are for dropping your vehicle off, not waiting on it. Leave it with us and we'll get to it during the day. Need to wait while we work? That's by request only, so mention it when you book and we'll set it up.</p>
+      </div>
+    </div>
     <div class="scheduler-embed">
       <script src="https://app.shopmonkey.cloud/scripts/scheduler.js?lid=8b3a712c-4d2a-45fe-9522-8ef144f88aa7&e=stable&embed=true" type="text/javascript" id="sm_w_scheduler" defer></script>
     </div>
