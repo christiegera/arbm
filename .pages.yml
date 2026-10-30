@@ -1,4 +1,3 @@
-
 content:
   - name: notices
     label: Website Notices
@@ -18,4 +17,3 @@ content:
       - name: dropoff_body
         label: Booking page - drop-off notice text
         type: text
- 
