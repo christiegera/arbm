@@ -1,6 +1,6 @@
 content:
   - name: notices
-    label: Website Notices
+    label: Notices & Banner
     type: file
     path: site-config.json
     format: json
@@ -16,4 +16,87 @@ content:
         type: string
       - name: dropoff_body
         label: Booking page - drop-off notice text
+        type: text
+
+  - name: shop-info
+    label: Hours, Address & Phone
+    type: file
+    path: content/shop-info.json
+    format: json
+    fields:
+      - name: hours_days
+        label: Days open (e.g. Mon–Fri)
+        type: string
+      - name: hours_time
+        label: Hours (e.g. 8:00 AM – 4:30 PM)
+        type: string
+      - name: address_street
+        label: Street address
+        type: string
+      - name: address_city
+        label: City, state, ZIP
+        type: string
+      - name: phone
+        label: Text-us phone number (10 digits)
+        type: string
+
+  - name: services
+    label: Services & Vehicle Makes
+    type: file
+    path: content/services.json
+    format: json
+    fields:
+      - name: services
+        label: Services list
+        type: string
+        list: true
+      - name: makes
+        label: Makes we work on
+        type: string
+        list: true
+
+  - name: reviews
+    label: Customer Reviews
+    type: file
+    path: content/reviews.json
+    format: json
+    fields:
+      - name: reviews_summary
+        label: Rating line (e.g. 4.8 on Google)
+        type: string
+      - name: reviews
+        label: Reviews shown on the home page
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Customer first name
+            type: string
+          - name: text
+            label: Review text
+            type: text
+          - name: source
+            label: Where it's from
+            type: string
+
+  - name: about
+    label: About Page & Warranty
+    type: file
+    path: content/about.json
+    format: json
+    fields:
+      - name: about_heading
+        label: About page heading
+        type: text
+      - name: about_p1
+        label: About paragraph 1
+        type: text
+      - name: about_p2
+        label: About paragraph 2
+        type: text
+      - name: warranty_title
+        label: Warranty title (About + Services pages)
+        type: string
+      - name: warranty_body
+        label: Warranty text (About + Services pages)
         type: text
