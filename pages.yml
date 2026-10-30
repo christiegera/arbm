@@ -1,0 +1,19 @@
+content:
+  - name: notices
+    label: Website Notices
+    type: file
+    path: site-config.json
+    format: json
+    fields:
+      - name: banner_enabled
+        label: Show banner at the top of every page
+        type: boolean
+      - name: banner_text
+        label: Banner message (e.g. "Closed Friday for the holiday")
+        type: string
+      - name: dropoff_title
+        label: Booking page - drop-off notice title
+        type: string
+      - name: dropoff_body
+        label: Booking page - drop-off notice text
+        type: text
