@@ -235,7 +235,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="sms:+12678481464">Text Us</a></li>
+        <li><a data-cms-phone href="sms:+12678481464">Text Us</a></li>
       </ul>
       <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
         <span></span><span></span><span></span>
@@ -247,7 +247,7 @@
     <a href="index.html" onclick="toggleMenu()">Home</a>
     <a href="about.html" onclick="toggleMenu()">About</a>
     <a href="services.html" onclick="toggleMenu()">Services</a>
-    <a href="sms:+12678481464" onclick="toggleMenu()">Text Us</a>
+    <a data-cms-phone href="sms:+12678481464" onclick="toggleMenu()">Text Us</a>
   </div>
 
   <div class="page-header container">
@@ -264,7 +264,7 @@
       <div>
         <strong data-cms="dropoff_title">Drop-off appointments only</strong>
         <p data-cms="dropoff_body">Your appointment time is when you drop your car off. It is not a waiting appointment, and work doesn't start the moment you arrive. Leave it with us and we'll get to it during the day.</p>
-        <p class="dropoff-wait">Need to wait while we work? Don't book it here. Text us at <a href="sms:+12678481464">(267) 848-1464</a> and we'll set it up.</p>
+        <p class="dropoff-wait">Need to wait while we work? Don't book it here. Text us at <a data-cms-phone data-cms-tpl="{phone_display}" href="sms:+12678481464">(267) 848-1464</a> and we'll set it up.</p>
       </div>
     </div>
 
@@ -298,8 +298,8 @@
     </div>
 
     <div class="trust-strip">
-      <div><span>13 N Hellertown Ave</span> · Quakertown, PA</div>
-      <div><span>Mon–Fri</span> · 8am–4:30pm</div>
+      <div><span data-cms="address_street">13 N Hellertown Ave</span> · <span data-cms="address_city">Quakertown, PA</span></div>
+      <div><span data-cms="hours_days">Mon–Fri</span> · <span data-cms="hours_time">8am–4:30pm</span></div>
     </div>
   </div>
 

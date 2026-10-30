@@ -229,7 +229,7 @@
       <ul class="nav-links">
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="sms:+12678481464">Text Us</a></li>
+        <li><a data-cms-phone href="sms:+12678481464">Text Us</a></li>
       </ul>
       <a href="appointment.html" class="nav-cta">Book Appointment</a>
       <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
@@ -241,7 +241,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="about.html" onclick="toggleMenu()">About Mike</a>
     <a href="services.html" onclick="toggleMenu()">Services</a>
-    <a href="sms:+12678481464" onclick="toggleMenu()">Text Us</a>
+    <a data-cms-phone href="sms:+12678481464" onclick="toggleMenu()">Text Us</a>
     <a href="appointment.html" onclick="toggleMenu()">Book Appointment →</a>
   </div>
 
@@ -278,8 +278,8 @@
             <div class="hero-stat-label">Makes &amp; models</div>
           </div>
           <div>
-            <div class="hero-stat-num">Mon–Fri</div>
-            <div class="hero-stat-label">8am – 4:30pm</div>
+            <div class="hero-stat-num" data-cms="hours_days">Mon–Fri</div>
+            <div class="hero-stat-label" data-cms="hours_time">8am – 4:30pm</div>
           </div>
         </div>
       </div>
@@ -290,8 +290,8 @@
   <div class="hours-bar">
     <div class="container hours-inner">
       <div>
-        <div class="hours-text">Open Monday – Friday, 8:00 AM – 4:30 PM</div>
-        <div class="hours-detail">13 N Hellertown Ave, Quakertown PA 18951</div>
+        <div class="hours-text" data-cms-tpl="Open {hours_days}, {hours_time}">Open Monday – Friday, 8:00 AM – 4:30 PM</div>
+        <div class="hours-detail" data-cms-tpl="{address_street}, {address_city}">13 N Hellertown Ave, Quakertown PA 18951</div>
       </div>
       <a href="appointment.html" class="hours-cta">Book an Appointment →</a>
     </div>
@@ -311,13 +311,13 @@
           <h2 class="section-title">Real Reviews from Real Neighbors</h2>
           <div class="reviews-stars">
             <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-            <span class="reviews-summary">4.8 on Google</span>
+            <span class="reviews-summary" data-cms="reviews_summary">4.8 on Google</span>
           </div>
         </div>
         <a href="https://search.google.com/local/writereview?placeid=ChIJHSGgKdkYxIkRHj8EHv0rfOQ" target="_blank" rel="noopener" class="btn btn-dark">Leave a Review ★</a>
       </div>
 
-      <div class="reviews-grid">
+      <div class="reviews-grid" data-cms-reviews>
         <div class="review-card">
           <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
           <p class="review-text">"Mike's repair shop is great! Been his customer for years and years. He goes the extra mile and makes good recommendations that has saved me and my family possible breakdowns and future problems. I feel he is a good honest mechanic; hard to find now days."</p>
@@ -350,11 +350,11 @@
       <div class="map-info">
         <div>
           <div class="map-info-label">Address</div>
-          <div class="map-info-value">13 N Hellertown Ave<br/>Quakertown, PA 18951</div>
+          <div class="map-info-value" data-cms-tpl="{address_street}\n{address_city}">13 N Hellertown Ave<br/>Quakertown, PA 18951</div>
         </div>
         <div>
           <div class="map-info-label">Hours</div>
-          <div class="map-info-value">Mon – Fri<br/>8:00 AM – 4:30 PM</div>
+          <div class="map-info-value" data-cms-tpl="{hours_days}\n{hours_time}">Mon – Fri<br/>8:00 AM – 4:30 PM</div>
         </div>
         <div>
           <div class="map-info-label">Book Online</div>
@@ -362,7 +362,7 @@
         </div>
         <div>
           <div class="map-info-label">Text Us</div>
-          <div class="map-info-value"><a href="sms:+12678481464">(267) 848-1464</a><br/><span style="font-size:13px;color:rgba(255,255,255,.4);font-weight:400;">Text only — we don't take calls at this number</span></div>
+          <div class="map-info-value"><a data-cms-phone data-cms-tpl="{phone_display}" href="sms:+12678481464">(267) 848-1464</a><br/><span style="font-size:13px;color:rgba(255,255,255,.4);font-weight:400;">Text only — we don't take calls at this number</span></div>
         </div>
       </div>
       <iframe
@@ -383,7 +383,7 @@
       <h2 class="section-title">Let's Get Your Car Back on the Road</h2>
       <p class="section-sub" style="margin: 0 auto 32px;">Book online in minutes — pick a time that works and we'll confirm during business hours.</p>
       <a href="appointment.html" class="btn btn-primary">Book an Appointment</a>
-      <p style="margin-top:18px;font-size:14px;color:var(--steel);">Need a waiting appointment or have a quick question? Text us at <a href="sms:+12678481464" style="color:var(--red);font-weight:600;">(267) 848-1464</a> (text only).</p>
+      <p style="margin-top:18px;font-size:14px;color:var(--steel);">Need a waiting appointment or have a quick question? Text us at <a data-cms-phone data-cms-tpl="{phone_display}" href="sms:+12678481464" style="color:var(--red);font-weight:600;">(267) 848-1464</a> (text only).</p>
 
       <div class="areas-served">
         Proudly serving <strong>Quakertown</strong>, Trumbauersville, Richlandtown, Perkasie, Spinnerstown, and Allentown, PA.
@@ -397,7 +397,7 @@
       <div>
         <div class="footer-logo">Auto Repair by <span>Mike</span></div>
         <div class="footer-copy">© 2026 Auto Repair by Mike, LLC · Quakertown, PA</div>
-        <div class="footer-copy" style="margin-top:8px;"><a href="sms:+12678481464" style="color:rgba(255,255,255,.55);font-weight:600;">Text us: (267) 848-1464</a> · text only, no calls</div>
+        <div class="footer-copy" style="margin-top:8px;"><a data-cms-phone data-cms-tpl="Text us: {phone_display}" href="sms:+12678481464" style="color:rgba(255,255,255,.55);font-weight:600;">Text us: (267) 848-1464</a> · text only, no calls</div>
       </div>
       <ul class="footer-links">
         <li><a href="about.html">About</a></li>
@@ -414,7 +414,7 @@
   <!-- STICKY MOBILE CTA -->
   <div class="sticky-mobile-cta">
     <a href="appointment.html" class="sticky-cta-book">Book</a>
-    <a href="sms:+12678481464" class="sticky-cta-contact">Text Us</a>
+    <a data-cms-phone href="sms:+12678481464" class="sticky-cta-contact">Text Us</a>
   </div>
 
   <script>

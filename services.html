@@ -159,7 +159,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="sms:+12678481464">Text Us</a></li>
+        <li><a data-cms-phone href="sms:+12678481464">Text Us</a></li>
       </ul>
       <a href="appointment.html" class="nav-cta">Book Appointment</a>
       <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
@@ -172,7 +172,7 @@
     <a href="index.html" onclick="toggleMenu()">Home</a>
     <a href="about.html" onclick="toggleMenu()">About</a>
     <a href="services.html" onclick="toggleMenu()">Services</a>
-    <a href="sms:+12678481464" onclick="toggleMenu()">Text Us</a>
+    <a data-cms-phone href="sms:+12678481464" onclick="toggleMenu()">Text Us</a>
     <a href="appointment.html" onclick="toggleMenu()">Book Appointment →</a>
   </div>
 
@@ -181,7 +181,7 @@
     <div class="container">
       <div class="page-eyebrow">Quakertown, PA</div>
       <h1 class="page-title">Services &amp; Makes</h1>
-      <p class="page-sub">We work on most makes and models — domestic, Asian, and European. If you don't see your service or vehicle listed, just text us at <a href="sms:+12678481464" style="color:var(--red);font-weight:600;">(267) 848-1464</a> and ask.</p>
+      <p class="page-sub">We work on most makes and models — domestic, Asian, and European. If you don't see your service or vehicle listed, just text us at <a data-cms-phone data-cms-tpl="{phone_display}" href="sms:+12678481464" style="color:var(--red);font-weight:600;">(267) 848-1464</a> and ask.</p>
     </div>
   </div>
 
@@ -191,7 +191,7 @@
       <div class="section-label">Vehicles We Service</div>
       <h2 class="section-title">All Makes &amp; Models Welcome</h2>
       <p class="section-sub">Dealer-trained at BMW, Honda, KIA, and Toyota — Mike knows your car regardless of what you drive.</p>
-      <div class="makes-grid">
+      <div class="makes-grid" data-cms-list="makes" data-cms-class="make-card">
         <div class="make-card">Acura</div>
         <div class="make-card">BMW</div>
         <div class="make-card">Buick</div>
@@ -228,7 +228,7 @@
       <div class="section-label">What We Do</div>
       <h2 class="section-title">Full-Service Auto Repair</h2>
       <p class="section-sub">From routine maintenance to complex diagnostics — if your car needs it, we probably do it.</p>
-      <div class="services-grid">
+      <div class="services-grid" data-cms-list="services" data-cms-class="service-item">
         <div class="service-item">A/C Service</div>
         <div class="service-item">Air Filter Replacement</div>
         <div class="service-item">Alternators</div>
@@ -266,8 +266,8 @@
       <div class="policy-note">
         <div class="policy-note-icon">🛡️</div>
         <div>
-          <strong>2-Year / 24,000-Mile Warranty</strong>
-          <p>All labor performed at Auto Repair by Mike is backed by a 2-year or 24,000-mile warranty — whichever comes first. Dealership-level coverage from an independent shop you can actually trust.</p>
+          <strong data-cms="warranty_title">2-Year / 24,000-Mile Warranty</strong>
+          <p data-cms="warranty_body">All labor performed at Auto Repair by Mike is backed by a 2-year or 24,000-mile warranty — whichever comes first. Dealership-level coverage from an independent shop you can actually trust.</p>
         </div>
       </div>
       <div class="policy-note">
@@ -294,7 +294,7 @@
     <div class="cta-strip-btns">
       <a href="appointment.html" class="btn btn-white">Book an Appointment</a>
     </div>
-    <p style="margin-top:20px;font-size:14px;color:rgba(255,255,255,.85);">Need to wait while we work, or have a quick question? Text us at <a href="sms:+12678481464" style="color:var(--white);font-weight:700;text-decoration:underline;">(267) 848-1464</a> (text only).</p>
+    <p style="margin-top:20px;font-size:14px;color:rgba(255,255,255,.85);">Need to wait while we work, or have a quick question? Text us at <a data-cms-phone data-cms-tpl="{phone_display}" href="sms:+12678481464" style="color:var(--white);font-weight:700;text-decoration:underline;">(267) 848-1464</a> (text only).</p>
   </div>
 
   <footer>
@@ -302,7 +302,7 @@
       <div>
         <div class="footer-logo">Auto Repair by <span>Mike</span></div>
         <div class="footer-copy">© 2026 Auto Repair by Mike, LLC · Quakertown, PA</div>
-        <div class="footer-copy" style="margin-top:8px;"><a href="sms:+12678481464" style="color:rgba(255,255,255,.55);font-weight:600;">Text us: (267) 848-1464</a> · text only, no calls</div>
+        <div class="footer-copy" style="margin-top:8px;"><a data-cms-phone data-cms-tpl="Text us: {phone_display}" href="sms:+12678481464" style="color:rgba(255,255,255,.55);font-weight:600;">Text us: (267) 848-1464</a> · text only, no calls</div>
       </div>
       <ul class="footer-links">
         <li><a href="index.html">Home</a></li>

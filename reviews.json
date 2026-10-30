@@ -1,0 +1,20 @@
+{
+  "reviews_summary": "4.8 on Google",
+  "reviews": [
+    {
+      "name": "Jeff",
+      "text": "Mike's repair shop is great! Been his customer for years and years. He goes the extra mile and makes good recommendations that has saved me and my family possible breakdowns and future problems. I feel he is a good honest mechanic; hard to find now days.",
+      "source": "Google Review"
+    },
+    {
+      "name": "Vincent",
+      "text": "After going to another shop and being told my car needed a multi thousand dollar job, I took my car down to Mikes despite it being a 40 minute drive from my house. There were plenty of opportunities to up sell and rack up the cost on a diagnostic job like this, but this shop never did that, and the repair was a smaller fix that was 1/4 of the price that another place told me. They were very honest and straightforward, and had great communication throughout the whole job. I wouldn't hesitate to take my cars here again.",
+      "source": "Google Review"
+    },
+    {
+      "name": "Naomi",
+      "text": "After moving to this area, I was looking for a reliable repair shop for my ancient Lexus. I definitely found it here. Mike's is THE BEST. Great work, timely appointments, fair prices, wonderful and cheerful staff (love you Sarah). And they stand behind their work! Highly recommended! Thanks for the super service.",
+      "source": "Google Review"
+    }
+  ]
+}
