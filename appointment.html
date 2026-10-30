@@ -112,13 +112,15 @@
       border-radius: var(--radius);
       padding: 20px 24px;
       max-width: 480px;
-      margin: 0 auto 12px;
+      margin: 0 auto 16px;
+      border-left: 5px solid var(--red);
     }
     .inspection-alert a { color: var(--red); font-weight: 700; text-decoration: none; }
     .inspection-alert-icon { font-size: 24px; flex-shrink: 0; line-height: 1.2; }
-    .inspection-alert strong { display: block; font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 5px; }
+    .inspection-alert strong { display: block; font-size: 19px; font-weight: 700; color: var(--white); margin-bottom: 5px; }
     .inspection-alert p { font-size: 14px; color: rgba(255,255,255,.65); line-height: 1.6; }
     .inspection-alert strong em { color: var(--red); font-style: normal; }
+    .inspection-alert p.dropoff-wait { margin-top: 10px; }
 
     /* =====================
        REMINDER BANNER
@@ -222,6 +224,7 @@
     gtag('config', 'G-QQBJD4V3GH');
   </script>
   <!-- Shop Monkey scheduler is embedded inline in the booking section below (embed=true) -->
+  <script src="site.js" defer></script>
 </head>
 <body>
 
@@ -251,25 +254,26 @@
     <div class="eyebrow">Quakertown, PA</div>
     <h1 class="page-title">Book Your Appointment</h1>
     <p class="page-sub">
-      Pick a time below that works for you and we'll confirm during business hours.
+      Pick a drop-off time below that works for you and we'll confirm during business hours.
     </p>
   </div>
 
   <div class="container">
+    <div class="inspection-alert">
+      <div class="inspection-alert-icon">🔑</div>
+      <div>
+        <strong data-cms="dropoff_title">Drop-off appointments only</strong>
+        <p data-cms="dropoff_body">Your appointment time is when you drop your car off. It is not a waiting appointment, and work doesn't start the moment you arrive. Leave it with us and we'll get to it during the day.</p>
+        <p class="dropoff-wait">Need to wait while we work? Don't book it here. Text us at <a href="sms:+12678481464">(267) 848-1464</a> and we'll set it up.</p>
+      </div>
+    </div>
+
     <div class="scheduler-legend">
       <div class="icon">📅</div>
       <div>
         <div class="legend-title">How to book</div>
         <p>Dates highlighted with <span class="open-num">blue numbers</span> are available to book!</p>
         <img src="booking-calendar-help.jpg" alt="Example calendar: dates with blue numbers are open to schedule" class="legend-shot" />
-      </div>
-    </div>
-
-    <div class="inspection-alert">
-      <div class="inspection-alert-icon">🔑</div>
-      <div>
-        <strong>These are <em>drop-off</em> appointments</strong>
-        <p>The times here are for dropping your vehicle off, not waiting on it. Leave it with us and we'll get to it during the day. Need to wait while we work? Don't book that online, just text us at <a href="sms:+12678481464">(267) 848-1464</a> and we'll set it up.</p>
       </div>
     </div>
 
